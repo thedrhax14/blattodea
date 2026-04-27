@@ -27,6 +27,13 @@ public class LandscapeManager : MonoBehaviour
     Transform stopPoint;
     [SerializeField]
     Transform carriage;
+    [SerializeField]
+    [Tooltip("Квадрат дистанции до конечной точки когда вагон должен начать тормозить")]
+    float distanceForTargetStartStopping;
+    [SerializeField]
+    [Tooltip("Квадрат дистанции  до конечной точки погрешности, когда позиция вагона приравнивается конечной точке")]
+    float distanceForTargetStop;
+
     List<Transform> activeParts = new List<Transform>();
     List<Transform> partsAvailable = new List<Transform>();
     int lampEnableIndexChoosed = 0, lampEnableIndexCurrent = 0;
@@ -91,10 +98,18 @@ public class LandscapeManager : MonoBehaviour
         if (trainStation.gameObject.activeSelf)
         {
             carriage.transform.position = Vector3.SmoothDamp(carriage.transform.position, stopPoint.position, ref carriageVelocity, 4, vagonSpeed);
-            if ((carriage.transform.position - stopPoint.position).sqrMagnitude <= 0.05f)
+            var posDelta = (carriage.transform.position - stopPoint.position).sqrMagnitude;
+            if (posDelta <= distanceForTargetStop)
             {
                 carriage.transform.position = stopPoint.position;
                 GameEvents.Instance.RaiseCarriageStopped();
+            }
+            else if (posDelta <= distanceForTargetStartStopping)
+            {
+                if (!GameStates.Instance.CarriageStartsStopping)
+                {
+                    GameEvents.Instance.RaiseCarriageStartStopping();
+                }
             }
         }
         else

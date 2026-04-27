@@ -107,20 +107,25 @@ namespace EasyPeasyFirstPersonController
         private void Update()
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask, QueryTriggerInteraction.Ignore);
-
-            currentState.UpdateState();
-            HandleRotation();
-            UpdateVisuals();
+            //if camera is locked - mouse look and moving disabled
+            if (!interactionManager.CameraIsLocked)
+            {
+                characterController.enabled = true;
+                currentState.UpdateState();
+                HandleRotation();
+                UpdateVisuals();
+            }
+            else
+            {
+                characterController.enabled = false;    
+            }
         }
 
         private void HandleRotation()
         {
-            if (interactionManager.CameraIsLocked) { return; }
             float mouseX = input.lookInput.x * mouseSensitivity;
             float mouseY = input.lookInput.y * mouseSensitivity;
-
             transform.Rotate(Vector3.up * mouseX);
-
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 

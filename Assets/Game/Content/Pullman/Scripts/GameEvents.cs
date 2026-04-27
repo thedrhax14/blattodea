@@ -25,5 +25,10 @@ public class GameEvents
     {
         CarriageStopped();
     }
+    public event Action CarriageStartStopping = delegate { };
+    public void RaiseCarriageStartStopping()
+    {
+        CarriageStartStopping();
+    }
 
 }
