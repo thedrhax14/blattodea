@@ -8,15 +8,19 @@ public class Carriage : MonoBehaviour
     AudioSource audioSource;
     [SerializeField]
     AudioClip audioClipDoorsOpen;
-    private void Awake()
+    private void OnEnable()
     {
         GameEvents.Instance.CarriageStopped += Instance_CarriageStopped;
     }
-
+    private void OnDisable()
+    {
+        GameEvents.Instance.CarriageStopped -= Instance_CarriageStopped;
+    }
     private void Instance_CarriageStopped()
     {
-        //animationDoorsOpen.Play();
+        animationDoorsOpen.Play();
         audioSource.clip = audioClipDoorsOpen;
+        audioSource.volume = 1.0f;
         audioSource.Play();
     }
 }
