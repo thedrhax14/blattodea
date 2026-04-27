@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public interface IInteractable
 {
+    bool CanShow { get; }
     void Interact();
     void Stop();
     string InteractText { get; }
@@ -63,7 +64,7 @@ public class InteractionManager : MonoBehaviour
                 }
             }
         }
-        if (foundedInteractObject)
+        if (foundedInteractObject && interactable.CanShow)
         {
             interactIcon.gameObject.SetActive(true);
             interactText.gameObject.SetActive(true);

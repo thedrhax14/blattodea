@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 0}
   interactText: {fileID: 0}
-  interactDistance: 5
+  interactDistance: 2
   interactLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -347,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushPower: 0.6
+  carriage: {fileID: 0}
 --- !u!1 &9156347144365898844
 GameObject:
   m_ObjectHideFlags: 0

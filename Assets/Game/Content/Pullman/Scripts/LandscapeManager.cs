@@ -21,9 +21,19 @@ public class LandscapeManager : MonoBehaviour
     [Tooltip("Z размер части туннеля ")]
     [SerializeField]
     float partSize;
+    [SerializeField]
+    Transform trainStation;
+    [SerializeField]
+    Transform stopPoint;
+    [SerializeField]
+    Transform carriage;
     List<Transform> activeParts = new List<Transform>();
     List<Transform> partsAvailable = new List<Transform>();
     int lampEnableIndexChoosed = 0, lampEnableIndexCurrent = 0;
+    bool isStopLeverActivated = false;
+    float brakingDistance = 0;
+    int partsToStop = -1;
+    Vector3 carriageVelocity;
     private void Awake()
     {
         foreach (Transform t in partsSource)
@@ -36,7 +46,16 @@ public class LandscapeManager : MonoBehaviour
             getPartAvailable(new Vector3(0, -1, i * partSize));
         }
         calcLampIndex();
+        trainStation.gameObject.SetActive(false);
+        GameEvents.Instance.StopLeverActivated += Instance_StopLeverActivated;
     }
+
+    private void Instance_StopLeverActivated()
+    {
+        isStopLeverActivated = true;
+        partsToStop = 4;
+    }
+
     void calcLampIndex()
     {
         lampEnableIndexCurrent = 0;
@@ -59,20 +78,48 @@ public class LandscapeManager : MonoBehaviour
     }
     private void Update()
     {
-        for (int i = 0; i < activeParts.Count; i++)
+        if (GameStates.Instance.CarriageStopped)
         {
-            var part = activeParts[i];
-            part.position = Vector3.MoveTowards(part.position, disablePoint, vagonSpeed);
-            if (i == 0)
+            return;
+        }
+        if (trainStation.gameObject.activeSelf)
+        {
+            carriage.transform.position = Vector3.SmoothDamp(carriage.transform.position, stopPoint.position, ref carriageVelocity, 4, vagonSpeed);
+            if ((carriage.transform.position - stopPoint.position).sqrMagnitude <= 0.05f)
             {
-                if (part.position == disablePoint)
+                carriage.transform.position = stopPoint.position;
+                GameEvents.Instance.RaiseCarriageStopped();
+            }
+        }
+        else
+        {
+            for (int i = 0; i < activeParts.Count; i++)
+            {
+                var part = activeParts[i];
+                part.position = Vector3.MoveTowards(part.position, disablePoint, vagonSpeed * Time.deltaTime);
+                if (i == 0)
                 {
-                    flushPart(part);
-                    getPartAvailable(new Vector3(0, -1, (activeParts.Count - 1) * partSize));
-                    lampEnableIndexCurrent++;
-                    if (lampEnableIndexCurrent == lampEnableIndexChoosed)
+                    if (part.position == disablePoint)
                     {
-                        calcLampIndex();
+                        flushPart(part);
+                        getPartAvailable(new Vector3(0, -1, (activeParts.Count - 1) * partSize));
+                        lampEnableIndexCurrent++;
+                        if (lampEnableIndexCurrent == lampEnableIndexChoosed)
+                        {
+                            calcLampIndex();
+                        }
+                        if (partsToStop > -1)
+                        {
+                            partsToStop--;
+                        }
+                        if (partsToStop == 0)
+                        {
+                            trainStation.gameObject.SetActive(true);
+                            trainStation.position = new Vector3(0, -1, (activeParts.Count - 1) * partSize - partSize);
+                            Vector3 direction = (stopPoint.position - transform.position).normalized;
+                            direction.y = 0;
+                            carriageVelocity = direction * vagonSpeed;
+                        }
                     }
                 }
             }
