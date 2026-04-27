@@ -16,6 +16,7 @@ public class GameStates
     }
     public bool StopLeverActivated { get; private set; } = false;
     public bool CarriageStopped { get; private set; } = false;
+    public bool CarriageStartsStopping { get; private set; } = false;
     private GameStates()
     {
         GameEvents.Instance.StopLeverActivated += () =>
@@ -25,6 +26,10 @@ public class GameStates
         GameEvents.Instance.CarriageStopped += () =>
         {
             CarriageStopped = true;
+        };
+        GameEvents.Instance.CarriageStartStopping += () =>
+        {
+            CarriageStartsStopping = true;
         };
     }
 }

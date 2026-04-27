@@ -743,6 +743,8 @@ MonoBehaviour:
   trainStation: {fileID: 236921327134376524}
   stopPoint: {fileID: 574176630}
   carriage: {fileID: 5950785608679634727}
+  distanceForTargetStartStopping: 5
+  distanceForTargetStop: 0.0002
 --- !u!4 &1790685631
 Transform:
   m_ObjectHideFlags: 0
