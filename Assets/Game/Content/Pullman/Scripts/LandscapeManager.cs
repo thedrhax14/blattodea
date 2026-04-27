@@ -47,9 +47,15 @@ public class LandscapeManager : MonoBehaviour
         }
         calcLampIndex();
         trainStation.gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
         GameEvents.Instance.StopLeverActivated += Instance_StopLeverActivated;
     }
-
+    private void OnDisable()
+    {
+        GameEvents.Instance.StopLeverActivated -= Instance_StopLeverActivated;
+    }
     private void Instance_StopLeverActivated()
     {
         isStopLeverActivated = true;
