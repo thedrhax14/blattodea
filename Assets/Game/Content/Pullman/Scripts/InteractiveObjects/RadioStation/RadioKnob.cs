@@ -19,6 +19,8 @@ public class RadioKnob : MonoBehaviour, IInteractable
     bool IInteractable.LockCamera => interactObject.LockCamera;
 
     Sprite IInteractable.Icon => interactObject.Icon;
+    bool IInteractable.CanShow => true;
+
 
     public void Init(Action<float> onMouseDrag)
     {

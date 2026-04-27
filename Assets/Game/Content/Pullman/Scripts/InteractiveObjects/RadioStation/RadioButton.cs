@@ -18,6 +18,8 @@ public class RadioButton : MonoBehaviour, IInteractable
 
     Sprite IInteractable.Icon => interactObject.Icon;
 
+    bool IInteractable.CanShow => true;
+
     private void Awake()
     {
         animationClick.clip.legacy = true;

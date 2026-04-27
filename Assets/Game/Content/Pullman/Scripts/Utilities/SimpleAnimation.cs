@@ -11,16 +11,20 @@ public class SimpleAnimation : MonoBehaviour
     new Animation animation;
     private void Awake()
     {
-        animation = gameObject.AddComponent<Animation>();
-        animation.AddClip(clip,clip.name);
-        clip.legacy = true;
-        clip.wrapMode = wrapMode;
-        animation.clip = clip;
-        if (playAutomatically)
+        if (clip != null)
         {
-            animation.Play();
+            animation = gameObject.AddComponent<Animation>();
+            animation.AddClip(clip, clip.name);
+            clip.legacy = true;
+            clip.wrapMode = wrapMode;
+            animation.clip = clip;
+            if (playAutomatically)
+            {
+                animation.Play();
+            }
         }
     }
+    public Animation Animation => animation;
     public void Play()
     {
         animation.Play();

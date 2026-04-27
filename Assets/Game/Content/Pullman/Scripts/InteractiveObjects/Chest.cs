@@ -20,6 +20,8 @@ public class Chest : MonoBehaviour, IInteractable
     bool IInteractable.LockCamera => interactObjectCurrent.LockCamera;
 
     Sprite IInteractable.Icon => interactObjectCurrent.Icon;
+    bool IInteractable.CanShow => true;
+
 
     private void Awake()
     {
@@ -28,20 +30,7 @@ public class Chest : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        foreach (AnimationState state in animationOpen)
-        {
-            if (!IsOpened)
-            {
-                state.speed = 1;
-                state.normalizedTime = 0;
-            }
-            else
-            {
-                state.speed = -1;
-                state.normalizedTime = 1;
-            }
-
-        }
+        animationOpen.ChangeDirection(!IsOpened);
         IsOpened = !IsOpened;
         interactObjectCurrent = IsOpened ? interactObjectOpened : interactObjectClosed;
         audioSource.Play();
