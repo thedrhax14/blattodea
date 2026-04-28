@@ -290,12 +290,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 7862567597719926034}
   animationOpen: {fileID: 0}
-  interactObjectClosed:
+  interactObjectDataClosed:
     InteractText: Open
     InteractKey: 323
     LockCamera: 0
     Icon: {fileID: 21300000, guid: d0cd5fd8dc3368d4bbd8d05473a41249, type: 3}
-  interactObjectOpened:
+  interactObjectDataOpened:
     InteractText: Close
     InteractKey: 323
     LockCamera: 0

@@ -33,13 +33,13 @@ public class LandscapeManager : MonoBehaviour
     [SerializeField]
     [Tooltip("Квадрат дистанции  до конечной точки погрешности, когда позиция вагона приравнивается конечной точке")]
     float distanceForTargetStop;
-
+    [SerializeField]
+    [Tooltip("Сколько еще частей туннеля проедет вагон перед тем как появится станция")]
+    int partsToStop = 4;
     List<Transform> activeParts = new List<Transform>();
     List<Transform> partsAvailable = new List<Transform>();
     int lampEnableIndexChoosed = 0, lampEnableIndexCurrent = 0;
-    bool isStopLeverActivated = false;
     float brakingDistance = 0;
-    int partsToStop = -1;
     Vector3 carriageVelocity;
     private void Awake()
     {
@@ -65,8 +65,6 @@ public class LandscapeManager : MonoBehaviour
     }
     private void Instance_StopLeverActivated()
     {
-        isStopLeverActivated = true;
-        partsToStop = 4;
     }
 
     void calcLampIndex()
@@ -129,17 +127,20 @@ public class LandscapeManager : MonoBehaviour
                         {
                             calcLampIndex();
                         }
-                        if (partsToStop > -1)
+                        if (GameStates.Instance.StopLeverActivated)
                         {
-                            partsToStop--;
-                        }
-                        if (partsToStop == 0)
-                        {
-                            trainStation.gameObject.SetActive(true);
-                            trainStation.position = new Vector3(0, -1, (activeParts.Count - 1) * partSize - partSize);
-                            Vector3 direction = (stopPoint.position - transform.position).normalized;
-                            direction.y = 0;
-                            carriageVelocity = direction * vagonSpeed;
+                            if (partsToStop > -1)
+                            {
+                                partsToStop--;
+                            }
+                            if (partsToStop == 0)
+                            {
+                                trainStation.gameObject.SetActive(true);
+                                trainStation.position = new Vector3(0, -1, (activeParts.Count - 1) * partSize - partSize);
+                                Vector3 direction = (stopPoint.position - transform.position).normalized;
+                                direction.y = 0;
+                                carriageVelocity = direction * vagonSpeed;
+                            }
                         }
                     }
                 }

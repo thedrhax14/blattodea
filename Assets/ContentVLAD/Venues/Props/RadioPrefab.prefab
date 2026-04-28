@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationClick: {fileID: 8399755266717323569}
-  interactObject:
+  interactObjectData:
     InteractText: Track next
     InteractKey: 323
     LockCamera: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationClick: {fileID: 8838342562315944235}
-  interactObject:
+  interactObjectData:
     InteractText: Track previous
     InteractKey: 323
     LockCamera: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe582c30386c84442baaeea95fbf8b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactObject:
+  interactObjectData:
     InteractText: Change volume
     InteractKey: 323
     LockCamera: 1

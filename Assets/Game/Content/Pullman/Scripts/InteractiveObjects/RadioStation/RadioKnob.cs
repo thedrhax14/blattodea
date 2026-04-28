@@ -6,22 +6,13 @@ using UnityEngine.UI;
 public class RadioKnob : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    InteractObject interactObject;
+    InteractObjectData interactObjectData;
     private Action<float> onMouseDrag;
     bool isDragged = false;
     float sensitivity = 2;
     float startMousePos = 0;
-
-    string IInteractable.InteractText => interactObject.InteractText;
-
-    KeyCode IInteractable.InteractKey => interactObject.InteractKey;
-
-    bool IInteractable.LockCamera => interactObject.LockCamera;
-
-    Sprite IInteractable.Icon => interactObject.Icon;
     bool IInteractable.CanShow => true;
-
-
+    IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
     public void Init(Action<float> onMouseDrag)
     {
         this.onMouseDrag = onMouseDrag;

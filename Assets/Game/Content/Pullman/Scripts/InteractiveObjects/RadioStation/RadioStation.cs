@@ -97,6 +97,7 @@ public class RadioStation : MonoBehaviour
         playAudioClip(SFX.TurnOffOn);
         Light.enabled = false;
         textMesh.enabled = false;
+        audioSourceMusic.volume = 0;
         StopCoroutine(trackingCor);
         trackingCor = null;
     }
@@ -156,7 +157,6 @@ public class RadioStation : MonoBehaviour
         {
             VolumeCurrent += delta;
             VolumeCurrent = Mathf.Clamp(VolumeCurrent, 0, 1);
-            Debug.Log(VolumeCurrent);
         }
     }
 

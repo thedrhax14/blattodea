@@ -7,18 +7,10 @@ public class RadioButton : MonoBehaviour, IInteractable
     [SerializeField]
     Animation animationClick;
     [SerializeField]
-    InteractObject interactObject;
+    InteractObjectData interactObjectData;
     Action onInteract = delegate { };
-
-    string IInteractable.InteractText => interactObject.InteractText;
-
-    KeyCode IInteractable.InteractKey => interactObject.InteractKey;
-
-    bool IInteractable.LockCamera => interactObject.LockCamera;
-
-    Sprite IInteractable.Icon => interactObject.Icon;
-
     bool IInteractable.CanShow => true;
+    IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
 
     private void Awake()
     {

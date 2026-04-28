@@ -9,30 +9,24 @@ public class Chest : MonoBehaviour, IInteractable
     [SerializeField]
     Animation animationOpen;
     [SerializeField]
-    InteractObject interactObjectClosed, interactObjectOpened;
+    InteractObjectData interactObjectDataClosed, interactObjectDataOpened;
     Action onInteract = delegate { };
-    InteractObject interactObjectCurrent = null;
+    InteractObjectData interactObjectCurrent = null;
     public bool IsOpened { get; private set; } = false;
-    string IInteractable.InteractText => interactObjectCurrent.InteractText;
-
-    KeyCode IInteractable.InteractKey => interactObjectCurrent.InteractKey;
-
-    bool IInteractable.LockCamera => interactObjectCurrent.LockCamera;
-
-    Sprite IInteractable.Icon => interactObjectCurrent.Icon;
+    IInteractable.IObjectData IInteractable.ObjectData => interactObjectCurrent;
     bool IInteractable.CanShow => true;
 
 
     private void Awake()
     {
         animationOpen.clip.legacy = true;
-        interactObjectCurrent = interactObjectClosed;
+        interactObjectCurrent = interactObjectDataClosed;
     }
     public void Interact()
     {
         animationOpen.ChangeDirection(!IsOpened);
         IsOpened = !IsOpened;
-        interactObjectCurrent = IsOpened ? interactObjectOpened : interactObjectClosed;
+        interactObjectCurrent = IsOpened ? interactObjectDataOpened : interactObjectDataClosed;
         audioSource.Play();
         animationOpen.Play();
         onInteract();
