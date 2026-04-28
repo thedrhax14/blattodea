@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c35110fbd2c30b4e8fcc877fc235693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vagonSpeed: 4
+  vagonSpeed: 12
   lampEnableIndexMin: 5
   lampEnableIndexMax: 12
   activePartsNum: 4
@@ -739,7 +739,7 @@ MonoBehaviour:
   - {fileID: 52783523}
   - {fileID: 659981916}
   - {fileID: 1435514610}
-  partSize: 7.5
+  partSize: 7
   trainStation: {fileID: 236921327134376524}
   stopPoint: {fileID: 574176630}
   carriage: {fileID: 5950785608679634727}
