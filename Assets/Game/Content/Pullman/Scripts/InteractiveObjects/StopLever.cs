@@ -7,14 +7,8 @@ public class StopLever : MonoBehaviour, IInteractable
     [SerializeField]
     new SimpleAnimation animation;
     [SerializeField]
-    InteractObject interactObject;
-    string IInteractable.InteractText => interactObject.InteractText;
-
-    KeyCode IInteractable.InteractKey => interactObject.InteractKey;
-
-    bool IInteractable.LockCamera => false;
-
-    Sprite IInteractable.Icon => interactObject.Icon;
+    InteractObjectData interactObjectData;
+    IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
     bool IInteractable.CanShow => !GameStates.Instance.StopLeverActivated;
 
 

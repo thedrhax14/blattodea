@@ -30,5 +30,9 @@ public class GameEvents
     {
         CarriageStartStopping();
     }
-
+    public event Action MainDoorOpened = delegate { };
+    public void RaiseMainDoorOpened()
+    {
+        MainDoorOpened();
+    }
 }

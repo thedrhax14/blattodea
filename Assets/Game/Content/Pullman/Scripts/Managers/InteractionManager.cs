@@ -8,19 +8,31 @@ public interface IInteractable
     bool CanShow { get; }
     void Interact();
     void Stop();
-    string InteractText { get; }
-    KeyCode InteractKey { get; }
-    bool LockCamera { get; }
-    Sprite Icon { get; }
+    IObjectData ObjectData { get; }
+
+    public interface IObjectData
+    {
+        string InteractText { get; }
+        KeyCode InteractKey { get; }
+        bool LockCamera { get; }
+        Sprite Icon { get; }
+    }
 }
+
 [Serializable]
-public class InteractObject
+public class InteractObjectData : IInteractable.IObjectData
 {
     public string InteractText;
     public KeyCode InteractKey;
     public bool LockCamera;
     public Sprite Icon;
+    string IInteractable.IObjectData.InteractText => InteractText;
 
+    KeyCode IInteractable.IObjectData.InteractKey => InteractKey;
+
+    bool IInteractable.IObjectData.LockCamera => LockCamera;
+
+    Sprite IInteractable.IObjectData.Icon => Icon;
 }
 public class InteractionManager : MonoBehaviour
 {
@@ -51,16 +63,17 @@ public class InteractionManager : MonoBehaviour
             if (hit.collider.TryGetComponent(out interactable))
             {
                 foundedInteractObject = true;
-                if (Input.GetKeyDown(interactable.InteractKey))
+                if (Input.GetKeyDown(interactable.ObjectData.InteractKey))
                 {
                     interactable.Interact();
-                    CameraIsLocked = interactable.LockCamera;
+                    CameraIsLocked = interactable.ObjectData.LockCamera;
                     Cursor.lockState = CameraIsLocked ? CursorLockMode.Confined : CursorLockMode.Locked;
                 }
-                if (Input.GetKeyUp(interactable.InteractKey))
+                if (Input.GetKeyUp(interactable.ObjectData.InteractKey))
                 {
                     interactable.Stop();
                     CameraIsLocked = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                 }
             }
         }
@@ -68,8 +81,8 @@ public class InteractionManager : MonoBehaviour
         {
             interactIcon.gameObject.SetActive(true);
             interactText.gameObject.SetActive(true);
-            interactText.text = interactable.InteractText;
-            interactIcon.sprite = interactable.Icon;
+            interactText.text = interactable.ObjectData.InteractText;
+            interactIcon.sprite = interactable.ObjectData.Icon;
         }
         else
         {
