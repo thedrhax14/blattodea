@@ -4,8 +4,6 @@ using UnityEngine;
 public class Carriage : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem[] particlesSteam;
-    [SerializeField]
     SimpleAnimation animationDoorsOpen;
     [SerializeField]
     AudioSource audioSourceEffects, audioSourceBackground;
@@ -32,10 +30,6 @@ public class Carriage : MonoBehaviour
         animationDoorsOpen.Play();
         audioSourceEffects.clip = audioClipDoorsOpen;
         audioSourceEffects.Play();
-        foreach (var particle in particlesSteam)
-        {
-            particle.Play();
-        }
     }
     IEnumerator stopping()
     {

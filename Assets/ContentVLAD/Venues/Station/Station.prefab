@@ -296,6 +296,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4497278815389615753}
+  - {fileID: 341769353017334086}
   m_Father: {fileID: 3365647328003293524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5291729533557561643
@@ -531,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7749417857628257096
 Transform:
   m_ObjectHideFlags: 0
@@ -700,12 +701,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorActivator: {fileID: 2792260982448764939}
-  particlesMetalImpact:
+  particlesMetalImpactDoor:
   - {fileID: 6585065429907387308}
   - {fileID: 8067894310427527245}
+  particlesMetalImpactValve: {fileID: 5448316266063714996}
   animator: {fileID: 5373291703853811698}
   audioClipValve: {fileID: 8300000, guid: f85118e8feab1da4184ca49c2509fb76, type: 3}
-  audioClipDoorOpen: {fileID: 8300000, guid: a196f36991984cd4299e38f7f149663e, type: 3}
+  audioClipDoorOpen: {fileID: 8300000, guid: 2f6d877e36c9f6a479735cf653133bf6, type: 3}
 --- !u!95 &5373291703853811698
 Animator:
   serializedVersion: 7
@@ -837,6 +839,85 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2619086233303812490, guid: 8bd51f119d9b05a40b6b8c8128927c84, type: 3}
+--- !u!1001 &373324838274956026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5396711283175136232}
+    m_Modifications:
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6197791
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7847764
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 103.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 295206070340945453, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: m_Name
+      value: MetalImpactValve
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: ShapeModule.arc.spread
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+--- !u!4 &341769353017334086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 112701711684199356, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+  m_PrefabInstance: {fileID: 373324838274956026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5448316266063714996 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
+  m_PrefabInstance: {fileID: 373324838274956026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1571971979883647970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -887,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 295206070340945453, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
       propertyPath: m_Name
-      value: MetalImpact
+      value: MetalImpactDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -954,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 295206070340945453, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
       propertyPath: m_Name
-      value: MetalImpact (1)
+      value: MetalImpactDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
