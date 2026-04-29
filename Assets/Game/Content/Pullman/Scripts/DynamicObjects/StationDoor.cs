@@ -5,7 +5,9 @@ public class StationDoor : MonoBehaviour
     [SerializeField]
     StationDoorActivator doorActivator;
     [SerializeField]
-    ParticleSystem[] particlesMetalImpact;
+    ParticleSystem[] particlesMetalImpactDoor;
+    [SerializeField]
+    ParticleSystem particlesMetalImpactValve;
     [SerializeField]
     Animator animator;
     [SerializeField]
@@ -21,16 +23,18 @@ public class StationDoor : MonoBehaviour
     }
     void startRotateValve()
     {
+        particlesMetalImpactValve.Play();
         audioSource.clip = audioClipValve;
         audioSource.Play();
         animator.SetTrigger("Activate");
-        foreach (var particle in particlesMetalImpact)
-        {
-            particle.Play();
-        }
+       
     }
     public void OpeningDoorEffects()
     {
+        foreach (var particle in particlesMetalImpactDoor)
+        {
+            particle.Play();
+        }
         audioSource.clip = audioClipDoorOpen;
         audioSource.Play();
     }
