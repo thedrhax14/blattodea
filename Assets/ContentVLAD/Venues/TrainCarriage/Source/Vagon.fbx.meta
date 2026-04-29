@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Exterior
+    second: {fileID: 2100000, guid: e94729995d026cb479ade9cd0f57cf0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Lamps
     second: {fileID: 2100000, guid: f5d5418ddcac43c4fa4027664eeb0160, type: 2}
   - first:
