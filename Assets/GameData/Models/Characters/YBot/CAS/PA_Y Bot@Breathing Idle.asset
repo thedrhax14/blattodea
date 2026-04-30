@@ -1,0 +1,1033 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7412168983625925654
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea2dd9ab0574ca0a085fb6f8f31bc6a, type: 3}
+  m_Name: Look Modifier
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: proceduralData.AimingWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: CASProceduralDataBehaviour
+    weightModifier:
+      isMask: 0
+      inRangeMin: 0
+      inRangeMax: 0
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Mask_Look_Rotation.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 1
+      inRangeMin: 0
+      inRangeMax: 2
+  showSceneGui: 0
+  pitchInput:
+    objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    propertyPath: proceduralData.LookInput.y
+    defaultValue: 0
+    isBound: 1
+    friendlyObjectType: CASProceduralDataBehaviour
+  yawInput:
+    objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    propertyPath: proceduralData.DeltaLookInput.x
+    defaultValue: 0
+    isBound: 1
+    friendlyObjectType: CASProceduralDataBehaviour
+  useYawAsDelta: 1
+  rollInput:
+    objectType: 
+    propertyPath: 
+    defaultValue: 0
+    isBound: 0
+    friendlyObjectType: 
+  pitchOffsetElements:
+  - rigElement:
+      name: mixamorig:Spine
+      index: 11
+      depth: 1
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine1
+      index: 12
+      depth: 2
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine2
+      index: 13
+      depth: 3
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  yawOffsetElements:
+  - rigElement:
+      name: mixamorig:Spine
+      index: 11
+      depth: 1
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine1
+      index: 12
+      depth: 2
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine2
+      index: 13
+      depth: 3
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  rollOffsetElements:
+  - rigElement:
+      name: mixamorig:Spine
+      index: 11
+      depth: 1
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine1
+      index: 12
+      depth: 2
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine2
+      index: 13
+      depth: 3
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  enableTurnInPlace: 1
+  angleThreshold: 45
+  turnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  turnSpeed: 1.7
+  turnRightState: TurnRight
+  turnLeftState: TurnLeft
+--- !u!114 &-5244209881628049074
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581b293d753046f9af51fd12039fef58, type: 3}
+  m_Name: Left Foot IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides: []
+  showSceneGui: 0
+  tip:
+    name: mixamorig:LeftFoot
+    index: -1
+    depth: -1
+  target:
+    name: IK foot_l
+    index: -1
+    depth: -1
+  useWorldTarget: 0
+  ikTargetTransform:
+    objectType: 
+    propertyPath: 
+    defaultValue: {fileID: 0}
+    isBound: 0
+    friendlyObjectType: 
+  hintWeight: 1
+  hintTarget:
+    name: None
+    index: -1
+    depth: -1
+  hintOffset: {x: 0, y: 0, z: 1}
+  maxLimbLengthScale: 1
+--- !u!114 &-1749855948297164527
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581b293d753046f9af51fd12039fef58, type: 3}
+  m_Name: Right Hand IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Enable_HandR_IK.value
+      defaultValue: 1
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 0
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  tip:
+    name: mixamorig:RightHand
+    index: 44
+    depth: 7
+  target:
+    name: None
+    index: -1
+    depth: -1
+  useWorldTarget: 1
+  ikTargetTransform:
+    objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    propertyPath: proceduralData.RightHandIkTarget
+    defaultValue: {fileID: 0}
+    isBound: 1
+    friendlyObjectType: CASProceduralDataBehaviour
+  hintWeight: 1
+  hintTarget:
+    name: None
+    index: -1
+    depth: -1
+  hintOffset: {x: 0, y: 0, z: 0}
+  maxLimbLengthScale: 1
+--- !u!114 &-1328917843979889397
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581b293d753046f9af51fd12039fef58, type: 3}
+  m_Name: Right Foot IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides: []
+  showSceneGui: 0
+  tip:
+    name: mixamorig:RightFoot
+    index: -1
+    depth: -1
+  target:
+    name: IK foot_r
+    index: -1
+    depth: -1
+  useWorldTarget: 0
+  ikTargetTransform:
+    objectType: 
+    propertyPath: 
+    defaultValue: {fileID: 0}
+    isBound: 0
+    friendlyObjectType: 
+  hintWeight: 1
+  hintTarget:
+    name: None
+    index: -1
+    depth: -1
+  hintOffset: {x: 0, y: 0, z: 1}
+  maxLimbLengthScale: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e7be750ea64cb99d1929e5a83929ca, type: 3}
+  m_Name: PA_Y Bot@Breathing Idle
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  modifiers:
+  - {fileID: -7412168983625925654}
+  - {fileID: 1691316749491803079}
+  - {fileID: 6571322667803695307}
+  - {fileID: 3746267306850560639}
+  - {fileID: 774481429136209428}
+  - {fileID: 3128874544657309542}
+  - {fileID: 2771757028786549800}
+  - {fileID: -1749855948297164527}
+  - {fileID: 8665889343908994694}
+  - {fileID: 1576791787338294873}
+  - {fileID: -1328917843979889397}
+  - {fileID: -5244209881628049074}
+--- !u!114 &774481429136209428
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02a7b077009ba0478a0ba65123cb59f, type: 3}
+  m_Name: Pivot Modifier
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Traversal_Weight.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 1
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  moveInput:
+    objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    propertyPath: proceduralData.MoveInput
+    defaultValue: {x: 0, y: 0}
+    isBound: 1
+    friendlyObjectType: CASProceduralDataBehaviour
+  pelvis:
+    name: mixamorig:Hips
+    index: 0
+    depth: 0
+  spineBones:
+  - rigElement:
+      name: mixamorig:Spine
+      index: 11
+      depth: 1
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine1
+      index: 12
+      depth: 2
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  - rigElement:
+      name: mixamorig:Spine2
+      index: 13
+      depth: 3
+    clampedAngle: {x: 30, y: 30}
+    cachedClampedAngle: {x: 30, y: 30}
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  translationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.15
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationSmoothing: 5
+  positionSmoothing: 5
+  playbackSpeed: 1
+  maxLeanAngle: 20
+  leanIntensity: 1
+--- !u!114 &1576791787338294873
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581b293d753046f9af51fd12039fef58, type: 3}
+  m_Name: Left Hand IK Interaction
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Interaction_HandL_IK.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 0
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  tip:
+    name: mixamorig:LeftHand
+    index: 17
+    depth: -1
+  target:
+    name: IK hand_l
+    index: 66
+    depth: -1
+  useWorldTarget: 1
+  ikTargetTransform:
+    objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    propertyPath: proceduralData.GetLeftInteractionHandTarget
+    defaultValue: {fileID: 0}
+    isBound: 1
+    friendlyObjectType: CASProceduralDataBehaviour
+  hintWeight: 1
+  hintTarget:
+    name: mixamorig:LeftForeArm
+    index: 16
+    depth: -1
+  hintOffset: {x: 0, y: 0, z: 0}
+  maxLimbLengthScale: 1
+--- !u!114 &1691316749491803079
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134c52960f6c499baf1775d46c46ecb0, type: 3}
+  m_Name: Copy Right Foot IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides: []
+  showSceneGui: 0
+  copyFrom:
+    name: mixamorig:RightFoot
+    index: -1
+    depth: -1
+  copyTo:
+    name: IK foot_r
+    index: -1
+    depth: -1
+  copySpace: 2
+  copyMode: 1
+  copyPosition: 1
+  copyRotation: 1
+  copyScale: 0
+--- !u!114 &2771757028786549800
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31960828877a4b8d8d35452bdbb689c9, type: 3}
+  m_Name: Step Modifier
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Traversal_Weight.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 1
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  pelvis:
+    name: mixamorig:Hips
+    index: 0
+    depth: 0
+  rightFootIkTarget:
+    name: IK foot_r
+    index: -1
+    depth: -1
+  leftFootIkTarget:
+    name: IK foot_l
+    index: -1
+    depth: -1
+  rightFoot:
+    name: mixamorig:RightFoot
+    index: 8
+    depth: 3
+  leftFoot:
+    name: mixamorig:LeftFoot
+    index: 3
+    depth: 3
+  legStretchFactor: 0.05
+  leadFootMotion:
+    x:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    y:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    z:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  followFootMotion:
+    x:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    y:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    z:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  pelvisMotion:
+    x:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    y:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    z:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  leadFootScale: {x: 1, y: 1, z: 1}
+  followFootScale: {x: 1, y: 1, z: 1}
+  pelvisScale: {x: 1, y: 1, z: 1}
+  playRate: 1
+  animatedLeadFoot: 0
+  forceLeadFoot: 0
+  maxAllowedStride: 0.3
+  maxAllowedOffsetAngle: 45
+  stepCooldownRate: 0
+  totalLeadFootMotion: {x: 0, y: 0, z: 0}
+  totalFollowFootMotion: {x: 0, y: 0, z: 0}
+  totalPelvisMotion: {x: 0, y: 0, z: 0}
+--- !u!114 &3128874544657309542
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef67e36b8bb42669372754a0dc06a36, type: 3}
+  m_Name: Foot IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Traversal_Weight.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 1
+      inRangeMin: 0
+      inRangeMax: 0
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Interaction_HandL_IK.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 1
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  pelvis:
+    name: mixamorig:Hips
+    index: 0
+    depth: 0
+  rightFootIk:
+    name: IK foot_r
+    index: -1
+    depth: -1
+  leftFootIk:
+    name: IK foot_l
+    index: -1
+    depth: -1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  traceOffset: 0.3
+  traceRadius: 0.05
+  interpSpeed: 20
+  rootInterpSpeed: 8
+  isGrounded:
+    objectType: 
+    propertyPath: 
+    defaultValue: 1
+    isBound: 0
+    friendlyObjectType: 
+--- !u!114 &3746267306850560639
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c19d2049e5e433590550dd51e09a14d, type: 3}
+  m_Name: Stride Modifier
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Traversal_Weight.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 1
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  bones:
+    pelvis:
+      name: mixamorig:Hips
+      index: 0
+      depth: 0
+    leftFoot:
+      name: mixamorig:LeftFoot
+      index: 3
+      depth: 3
+    rightFoot:
+      name: mixamorig:RightFoot
+      index: 8
+      depth: 3
+    leftFootIkTarget:
+      name: IK foot_l
+      index: -1
+      depth: -1
+    rightFootIkTarget:
+      name: IK foot_r
+      index: -1
+      depth: -1
+  footWarping:
+    bones:
+      pelvis:
+        name: None
+        index: -1
+        depth: -1
+      leftFoot:
+        name: None
+        index: -1
+        depth: -1
+      rightFoot:
+        name: None
+        index: -1
+        depth: -1
+      leftFootIkTarget:
+        name: IK foot_l
+        index: -1
+        depth: -1
+      rightFootIkTarget:
+        name: IK foot_r
+        index: -1
+        depth: -1
+    isEnabled: 1
+    strideSmoothing: 8
+    minStrideScale: 0.3
+    maxYawAngle: 60
+    feetSmoothing: 8
+    leanSmoothing: 4
+    pelvisRollScale: 0.1
+    legHipRotation: 0.5
+  footPinning:
+    bones:
+      pelvis:
+        name: None
+        index: -1
+        depth: -1
+      leftFoot:
+        name: None
+        index: -1
+        depth: -1
+      rightFoot:
+        name: None
+        index: -1
+        depth: -1
+      leftFootIkTarget:
+        name: IK foot_l
+        index: -1
+        depth: -1
+      rightFootIkTarget:
+        name: IK foot_r
+        index: -1
+        depth: -1
+    isEnabled: 1
+    legStretchFactor: 0.98
+    pinYawThreshold: 30
+    angularPinThreshold: 5
+    pinSmoothing: 8
+    pinHeightOffset: 0.01
+--- !u!114 &6571322667803695307
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134c52960f6c499baf1775d46c46ecb0, type: 3}
+  m_Name: Copy Left Foot IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides: []
+  showSceneGui: 0
+  copyFrom:
+    name: mixamorig:LeftFoot
+    index: -1
+    depth: -1
+  copyTo:
+    name: IK foot_l
+    index: -1
+    depth: -1
+  copySpace: 2
+  copyMode: 1
+  copyPosition: 1
+  copyRotation: 1
+  copyScale: 0
+--- !u!114 &8665889343908994694
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581b293d753046f9af51fd12039fef58, type: 3}
+  m_Name: Left Hand IK
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
+  alpha: 1
+  weightOverrides:
+  - weight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Enable_HandL_IK.value
+      defaultValue: 1
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    weightModifier:
+      isMask: 0
+      inRangeMin: 0
+      inRangeMax: 0
+  showSceneGui: 0
+  tip:
+    name: mixamorig:LeftHand
+    index: 17
+    depth: 7
+  target:
+    name: None
+    index: -1
+    depth: -1
+  useWorldTarget: 1
+  ikTargetTransform:
+    objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    propertyPath: proceduralData.LeftHandIkTarget
+    defaultValue: {fileID: 0}
+    isBound: 1
+    friendlyObjectType: CASProceduralDataBehaviour
+  hintWeight: 1
+  hintTarget:
+    name: None
+    index: -1
+    depth: -1
+  hintOffset: {x: 0, y: 0, z: 0}
+  maxLimbLengthScale: 1

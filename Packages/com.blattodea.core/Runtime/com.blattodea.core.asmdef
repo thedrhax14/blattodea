@@ -1,0 +1,18 @@
+{
+    "name": "com.blattodea.core",
+    "rootNamespace": "Blattodea.Core",
+    "references": [
+        "CAS.Addons.FPS.Runtime",
+        "CAS.Runtime",
+        "KAnimationCore.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

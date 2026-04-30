@@ -1,0 +1,10 @@
+{
+  "name": "com.blattodea.core",
+  "version": "0.1.0",
+  "displayName": "Blattodea Core",
+  "description": "Core model and observer primitives for Blattodea systems.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Blattodea"
+  }
+}

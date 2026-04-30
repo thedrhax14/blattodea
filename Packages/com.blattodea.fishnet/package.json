@@ -1,0 +1,10 @@
+{
+  "name": "com.blattodea.fishnet",
+  "version": "1.0.0",
+  "displayName": "Blattodea FishNet",
+  "description": "FishNet-focused networking primitives for Blattodea gameplay.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Blattodea"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "com.blattodea.fishnet.editor",
+    "rootNamespace": "Blattodea.FishNet.Editor",
+    "references": [
+        "com.blattodea.fishnet",
+        "FishNet.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

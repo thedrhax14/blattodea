@@ -1,0 +1,26 @@
+{
+    "name": "com.blattodea.fishnet",
+    "rootNamespace": "Blattodea.FishNet",
+    "references": [
+        "GUID:7c88a4a7926ee5145ad2dfa06f454c67",
+        "GUID:2bca47a702c50459cbcb55d9d93e46b1",
+        "GUID:11accb3f77969894f8bbe9a1772b2fd1",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:4c36dcf6d8eeb6d44ab73ef966534b46"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.0.0",
+            "define": "UNITY_INPUT_SYSTEM_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}
