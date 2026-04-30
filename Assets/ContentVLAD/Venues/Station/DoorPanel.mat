@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StationDetails
+  m_Name: DoorPanel
   m_Shader: {fileID: 4800000, guid: 888365d463dac2d4991412ce79adbcf0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a85c5bf2a026ad046abca85d094ae262, type: 3}
+        m_Texture: {fileID: 2800000, guid: b06e56fc7e72f1e4e8cc40e225b96c3b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
