@@ -230,6 +230,9 @@ GameObject:
   - component: {fileID: 3700534661164899874}
   - component: {fileID: 501924080532486953}
   - component: {fileID: 3682448488295358149}
+  - component: {fileID: 713956951552980995}
+  - component: {fileID: 798153885251380322}
+  - component: {fileID: 8808222724746366732}
   m_Layer: 2
   m_Name: CAS_FishNetPlayer_FPS
   m_TagString: Untagged
@@ -588,6 +591,50 @@ MonoBehaviour:
   useDebugVelocity: 0
   debugVelocity: {x: 0, y: 0, z: 0}
   debugAngularVelocity: 0
+--- !u!114 &713956951552980995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035598242180886075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d473e2919da23468fa476b979431bca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _behavioursToDisable:
+  - {fileID: 3682448488295358149}
+  - {fileID: 3473896892519701984}
+  _gameObjectsToDisable: []
+--- !u!114 &798153885251380322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035598242180886075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3c8312f86a04bb6948239fb5790d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cutsceneLock: {fileID: 713956951552980995}
+  _attachment: {fileID: 8808222724746366732}
+--- !u!114 &8808222724746366732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035598242180886075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b03d0984feb47b1a30d346452abc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRoot: {fileID: 3358888266663246991}
+  _carriage: {fileID: 0}
 --- !u!1 &8436756602132299920
 GameObject:
   m_ObjectHideFlags: 0

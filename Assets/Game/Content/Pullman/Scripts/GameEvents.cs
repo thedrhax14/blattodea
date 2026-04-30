@@ -30,6 +30,16 @@ public class GameEvents
     {
         CarriageStartStopping();
     }
+    public event Action TrainStopCutsceneStarted = delegate { };
+    public void RaiseTrainStopCutsceneStarted()
+    {
+        TrainStopCutsceneStarted();
+    }
+    public event Action TrainStopCutsceneEnded = delegate { };
+    public void RaiseTrainStopCutsceneEnded()
+    {
+        TrainStopCutsceneEnded();
+    }
     public event Action MainDoorOpeningStarted = delegate { };
     public void RaiseMainDoorOpeningStarted()
     {

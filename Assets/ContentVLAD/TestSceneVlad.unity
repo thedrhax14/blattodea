@@ -1361,6 +1361,7 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 1450021671}
   _networkObjectCache: {fileID: 0}
   _gameLifecycle: {fileID: 1450021672}
+  _carriage: {fileID: 5950785608679634727}
 --- !u!1 &1453325022
 GameObject:
   m_ObjectHideFlags: 0

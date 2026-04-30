@@ -5,11 +5,15 @@ using UnityEngine;
 public sealed class PullmanSequenceNetwork : NetworkBehaviour
 {
     public static PullmanSequenceNetwork Instance { get; private set; }
+    public static bool IsTrainStopCutsceneActive { get; private set; }
 
     [SerializeField]
     private NetworkGameLifecycle _gameLifecycle;
+    [SerializeField]
+    private Transform _carriage;
 
     private bool _stopLeverActivated;
+    private bool _trainStopCutsceneActive;
     private bool _mainDoorOpeningStarted;
     private bool _mainDoorOpened;
 
@@ -40,6 +44,18 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
         {
             Instance = null;
         }
+
+        IsTrainStopCutsceneActive = false;
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.Instance.CarriageStopped += OnCarriageStopped;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.CarriageStopped -= OnCarriageStopped;
     }
 
     public static bool TryGetInstance(out PullmanSequenceNetwork instance)
@@ -48,10 +64,17 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
         return instance != null;
     }
 
+    public bool TryGetCarriage(out Transform carriage)
+    {
+        carriage = _carriage;
+        return carriage != null;
+    }
+
     public void RequestStopLeverActivation()
     {
         if (!IsNetworkRunning())
         {
+            StartTrainStopCutsceneLocally();
             ActivateStopLeverLocally();
             _gameLifecycle?.TryStartGame();
             return;
@@ -127,6 +150,18 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
     }
 
     [ObserversRpc(ExcludeServer = true)]
+    private void ObserversStartTrainStopCutscene()
+    {
+        StartTrainStopCutsceneLocally();
+    }
+
+    [ObserversRpc(ExcludeServer = true)]
+    private void ObserversEndTrainStopCutscene()
+    {
+        EndTrainStopCutsceneLocally();
+    }
+
+    [ObserversRpc(ExcludeServer = true)]
     private void ObserversStartMainDoorOpening()
     {
         StartMainDoorOpeningLocally();
@@ -147,6 +182,7 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
         }
 
         _stopLeverActivated = true;
+        StartTrainStopCutsceneOnServer();
         _gameLifecycle?.TryStartGame();
         ActivateStopLeverLocally();
         ObserversActivateStopLever();
@@ -193,6 +229,60 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
     private static void ActivateStopLeverLocally()
     {
         GameEvents.Instance.ActivateStopLever();
+    }
+
+    private void OnCarriageStopped()
+    {
+        if (!IsNetworkRunning())
+        {
+            EndTrainStopCutsceneLocally();
+            return;
+        }
+
+        if (!IsServerStarted)
+        {
+            return;
+        }
+
+        EndTrainStopCutsceneOnServer();
+    }
+
+    [Server]
+    private void StartTrainStopCutsceneOnServer()
+    {
+        if (_trainStopCutsceneActive)
+        {
+            return;
+        }
+
+        _trainStopCutsceneActive = true;
+        StartTrainStopCutsceneLocally();
+        ObserversStartTrainStopCutscene();
+    }
+
+    [Server]
+    private void EndTrainStopCutsceneOnServer()
+    {
+        if (!_trainStopCutsceneActive)
+        {
+            return;
+        }
+
+        _trainStopCutsceneActive = false;
+        EndTrainStopCutsceneLocally();
+        ObserversEndTrainStopCutscene();
+    }
+
+    private static void StartTrainStopCutsceneLocally()
+    {
+        IsTrainStopCutsceneActive = true;
+        GameEvents.Instance.RaiseTrainStopCutsceneStarted();
+    }
+
+    private static void EndTrainStopCutsceneLocally()
+    {
+        IsTrainStopCutsceneActive = false;
+        GameEvents.Instance.RaiseTrainStopCutsceneEnded();
     }
 
     private static void StartMainDoorOpeningLocally()
