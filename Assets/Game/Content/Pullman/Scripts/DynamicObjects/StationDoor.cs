@@ -18,9 +18,26 @@ public class StationDoor : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         doorActivator.Init(() =>
         {
-            startRotateValve();
+            if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+            {
+                sequenceNetwork.RequestMainDoorOpening();
+            }
+            else
+            {
+                GameEvents.Instance.RaiseMainDoorOpeningStarted();
+            }
         });
     }
+    private void OnEnable()
+    {
+        GameEvents.Instance.MainDoorOpeningStarted += startRotateValve;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.MainDoorOpeningStarted -= startRotateValve;
+    }
+
     void startRotateValve()
     {
         particlesMetalImpactValve.Play();
@@ -40,6 +57,13 @@ public class StationDoor : MonoBehaviour
     }
     public void MarkDoorOpened()
     {
-        GameEvents.Instance.RaiseMainDoorOpened();
+        if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+        {
+            sequenceNetwork.ReportMainDoorOpened();
+        }
+        else
+        {
+            GameEvents.Instance.RaiseMainDoorOpened();
+        }
     }
 }

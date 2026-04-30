@@ -43,16 +43,26 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private float interactDistance = 3f;
     [SerializeField] private LayerMask interactLayer;
     Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
+    bool updateCursor = true;
     public bool CameraIsLocked { get; private set; } = false;
     private void Awake()
     {
         interactIcon.gameObject.SetActive(value: false);
         interactText.gameObject.SetActive(false);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
     private void Update()
     {
+        if(Camera.main == null) {
+            Debug.Log("Waiting for camera...");
+            return;
+        }
+        if(updateCursor)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            updateCursor = false;
+        }
         if (interactIcon == null) { return; }
         Ray ray = Camera.main.ViewportPointToRay(screenCenter);
         RaycastHit hit;

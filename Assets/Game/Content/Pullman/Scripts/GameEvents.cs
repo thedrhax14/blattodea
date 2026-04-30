@@ -30,6 +30,11 @@ public class GameEvents
     {
         CarriageStartStopping();
     }
+    public event Action MainDoorOpeningStarted = delegate { };
+    public void RaiseMainDoorOpeningStarted()
+    {
+        MainDoorOpeningStarted();
+    }
     public event Action MainDoorOpened = delegate { };
     public void RaiseMainDoorOpened()
     {

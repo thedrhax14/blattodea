@@ -11,19 +11,42 @@ public class StopLever : MonoBehaviour, IInteractable
     IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
     bool IInteractable.CanShow => !GameStates.Instance.StopLeverActivated;
 
+    private void OnEnable()
+    {
+        GameEvents.Instance.StopLeverActivated += OnStopLeverActivated;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.StopLeverActivated -= OnStopLeverActivated;
+    }
+
 
     void IInteractable.Interact()
     {
-        audioSource.Play();
-        //animation.Animation.ChangeDirection(isActivated);
-        //animation.Play();
         if (!GameStates.Instance.StopLeverActivated)
         {
-            GameEvents.Instance.ActivateStopLever();
+            if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+            {
+                sequenceNetwork.RequestStopLeverActivation();
+            }
+            else
+            {
+                GameEvents.Instance.ActivateStopLever();
+            }
         }
     }
 
     void IInteractable.Stop()
     {
+    }
+
+    private void OnStopLeverActivated()
+    {
+        audioSource.Play();
+        if (animation != null)
+        {
+            animation.Play();
+        }
     }
 }

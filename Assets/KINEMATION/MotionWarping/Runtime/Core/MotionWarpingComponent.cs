@@ -49,15 +49,13 @@ namespace KINEMATION.MotionWarping.Runtime.Core
 
         private CharacterController _characterController;
         private Rigidbody _rigidBody;
-        private bool _cachedControllerEnabled;
         private bool _cachedRigidBodyCollisions;
 
         private void OnWarpStarted_Internal()
         {
             if (_characterController != null && !_asset.useCollision)
             {
-                _cachedControllerEnabled = _characterController.enabled;
-                if(!_asset.useCollision)_characterController.enabled = false;
+                if(!_asset.useCollision) _characterController.enabled = false;
             }
             
             if (_rigidBody != null && !_asset.useCollision)
@@ -71,7 +69,7 @@ namespace KINEMATION.MotionWarping.Runtime.Core
         {
             if (_characterController != null)
             {
-                _characterController.enabled = _cachedControllerEnabled;
+                _characterController.enabled = true;
             }
 
             if (_rigidBody != null)
@@ -424,6 +422,7 @@ namespace KINEMATION.MotionWarping.Runtime.Core
 
         public void Stop()
         {
+            Debug.Log("MotionWarpingComponent: Stopping warp.");
             _bUpdateWarping = false;
             _warpPlayback = 0f;
             onWarpEnded.Invoke();
