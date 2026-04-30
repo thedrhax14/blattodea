@@ -290,7 +290,7 @@ MonoBehaviour:
   _initializeOrder: 0
   _preventDespawnOnDisconnect: 0
   _defaultDespawnType: 0
-  _initializedTimestamp: -8584240354193506728
+  _initializedTimestamp: -8584240337364202178
   _localLevelOfDetailCalculationType: 0
   _useLevelOfDetail: 0
   _useRootLevelOfDetail: 1
@@ -457,7 +457,7 @@ MonoBehaviour:
   minFallSpeedToInAir: 1.25
   orientRotationToMovement: 1
   isFirstPerson: 1
-  lookRotationSpeed: 70
+  lookRotationSpeed: 45
   characterCamera: {fileID: 6745020583496727349}
   proceduralDataBehaviour: {fileID: 501924080532486953}
   animator: {fileID: 8682104184629978869}
