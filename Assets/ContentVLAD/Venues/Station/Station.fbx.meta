@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: StationDetails
+    second: {fileID: 2100000, guid: 13d11f6f9ab734c4fa643a5360970885, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TubingTile
     second: {fileID: 2100000, guid: 4ba3c332001cd14408b61512f50cd2b0, type: 2}
   materials:
