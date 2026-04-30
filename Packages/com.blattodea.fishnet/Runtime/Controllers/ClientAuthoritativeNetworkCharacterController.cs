@@ -1080,7 +1080,7 @@ namespace Blattodea.FishNet.Controllers
                 return;
             }
 
-            _deltaLookInput = lookInput * lookSensitivity;
+            _deltaLookInput = lookSensitivity * Time.deltaTime * lookInput;
         }
 
         public virtual void SetSprintInput(bool pressed)

@@ -290,7 +290,7 @@ MonoBehaviour:
   _initializeOrder: 0
   _preventDespawnOnDisconnect: 0
   _defaultDespawnType: 0
-  _initializedTimestamp: -8584240481530512038
+  _initializedTimestamp: -8584240354193506728
   _localLevelOfDetailCalculationType: 0
   _useLevelOfDetail: 0
   _useRootLevelOfDetail: 1
@@ -406,7 +406,7 @@ MonoBehaviour:
   _networkObjectCache: {fileID: 24483526804561316}
   remoteInterpolationSpeed: 12
   sendInterval: 0.05
-  lookSensitivity: 1
+  lookSensitivity: 70
   moveInputAction: {fileID: 1298322494240009924, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
   lookInputAction: {fileID: -8099637563336446640, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
   sprintInputAction: {fileID: 3766794078187683627, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}

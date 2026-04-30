@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TestHouse.unity
-    guid: d5aaa9b34d08cbe43b2850e41b05f8d2
+    path: Assets/ContentVLAD/TestSceneVlad.unity
+    guid: 76dba1954bf372e41a91ff68b57685f2
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
