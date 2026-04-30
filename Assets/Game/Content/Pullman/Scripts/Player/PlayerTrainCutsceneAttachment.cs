@@ -54,6 +54,7 @@ public sealed class PlayerTrainCutsceneAttachment : MonoBehaviour
         }
         Debug.DrawRay(_originalParent.position, Vector3.up * 2f, Color.blue, 5f);
         Debug.DrawRay(_targetRoot.position, Vector3.up * 2f, Color.green, 5f);
+        _originalParent.GetComponent<CharacterController>().enabled = false;
         _originalParent.SetPositionAndRotation(_targetRoot.position, _targetRoot.rotation);
         _targetRoot.SetParent(_originalParent);
         Debug.DrawRay(_originalParent.position, Vector3.up * 2f, Color.blue, 5f);
@@ -63,6 +64,7 @@ public sealed class PlayerTrainCutsceneAttachment : MonoBehaviour
             int siblingIndex = Mathf.Clamp(_originalSiblingIndex, 0, _originalParent.childCount - 1);
             _targetRoot.SetSiblingIndex(siblingIndex);
             _targetRoot.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            _originalParent.GetComponent<CharacterController>().enabled = true;
             Debug.DrawRay(_originalParent.position, Vector3.up * 2f, Color.blue, 5f);
             Debug.DrawRay(_targetRoot.position, Vector3.up * 2f, Color.green, 5f);
         }
