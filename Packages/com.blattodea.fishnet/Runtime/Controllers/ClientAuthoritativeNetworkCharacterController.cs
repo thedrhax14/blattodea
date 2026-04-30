@@ -500,7 +500,7 @@ namespace Blattodea.FishNet.Controllers
                 return;
             }
 
-            proceduralAnimation.UpdateAnimationModifier(modifierSettings);
+            // proceduralAnimation.UpdateAnimationModifier(modifierSettings);
         }
 
         protected virtual void OnMovementChange(bool isMoving)

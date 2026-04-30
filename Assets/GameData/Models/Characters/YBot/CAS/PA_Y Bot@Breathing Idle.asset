@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Look Modifier
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
-  alpha: 1
+  alpha: 0
   weightOverrides:
   - weight:
       objectType: Blattodea.Core.Models.CASProceduralDataBehaviour, com.blattodea.core,
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: Pivot Modifier
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
-  alpha: 1
+  alpha: 0
   weightOverrides:
   - weight:
       objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: Step Modifier
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3820683643145108093, guid: f887b4c705b944e7181aba8e13eb1721, type: 3}
-  alpha: 1
+  alpha: 0
   weightOverrides:
   - weight:
       objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
