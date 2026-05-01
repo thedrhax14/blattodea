@@ -962,10 +962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Station
       objectReference: {fileID: 0}
-    - target: {fileID: 6971755666166800882, guid: 1675a3d1e270fc14890b36e86e13f1c0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7749417857628257096, guid: 1675a3d1e270fc14890b36e86e13f1c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
