@@ -29,6 +29,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: TubingTile
     second: {fileID: 2100000, guid: 4ba3c332001cd14408b61512f50cd2b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WalldDecals
+    second: {fileID: 2100000, guid: f067bc594492d2e4bb1bcd8bf5bf0e96, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
