@@ -738,7 +738,7 @@ MonoBehaviour:
   trainStation: {fileID: 3695623237614093797}
   stopPoint: {fileID: 5814121993543196280}
   carriage: {fileID: 5950785608679634727}
-  distanceForTargetStartStopping: 5
+  distanceForTargetStartStopping: 20
   distanceForTargetStop: 0.0002
   partsToStop: 10
 --- !u!4 &1790685631
@@ -961,6 +961,10 @@ PrefabInstance:
     - target: {fileID: 6971755666166800882, guid: 1675a3d1e270fc14890b36e86e13f1c0, type: 3}
       propertyPath: m_Name
       value: Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971755666166800882, guid: 1675a3d1e270fc14890b36e86e13f1c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7749417857628257096, guid: 1675a3d1e270fc14890b36e86e13f1c0, type: 3}
       propertyPath: m_LocalPosition.x
