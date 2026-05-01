@@ -1,16 +1,26 @@
 using System;
 using UnityEngine;
-
-public class StationDoorActivator : MonoBehaviour, IInteractable
+[RequireComponent(typeof(Rigidbody))]
+public class StationDoorPanelLever : MonoBehaviour, IInteractable
 {
+
     [SerializeField]
     InteractObjectData interactObjectData;
-    bool IInteractable.CanShow => !GameStates.Instance.MainDoorOpened;
     Action interactAction = delegate { };
+    new Rigidbody rigidbody;
+    bool IInteractable.CanShow => true;
+
     IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
+    void Awake()
+    {
+        rigidbody = gameObject.GetComponent<Rigidbody>();
+    }
+
     void IInteractable.Interact()
     {
         interactAction();
+        rigidbody.isKinematic = false;
+        rigidbody.AddRelativeForce(new Vector3(0, 0, -2), ForceMode.Impulse);
     }
     void IInteractable.Stop()
     {

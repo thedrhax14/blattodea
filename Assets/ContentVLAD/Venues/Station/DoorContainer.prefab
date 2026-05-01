@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1040787060945767963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653516284943947067}
+  - component: {fileID: 6815476869770031380}
+  - component: {fileID: 3147618423549581001}
+  m_Layer: 0
+  m_Name: SmashTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653516284943947067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040787060945767963}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.18, y: 0.09132004, z: -3.078}
+  m_LocalScale: {x: 0.48, y: 1.15, z: 1.31}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8732086249036877943}
+  m_Father: {fileID: 8644553582845191600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6815476869770031380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040787060945767963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968c4186d54b14e499c19332f11f4f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 3147618423549581001}
+--- !u!65 &3147618423549581001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040787060945767963}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1846719925736133214
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +243,7 @@ Transform:
   m_Children:
   - {fileID: 5885892801972412136}
   - {fileID: 1415900045060833036}
+  - {fileID: 1653516284943947067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2444300873721977092
@@ -189,6 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dd85db0d24804409adf89a426f1c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particlesSmashEffect: {fileID: 5171387888809412646}
+  triggerSmash: {fileID: 6815476869770031380}
   doorActivator: {fileID: 0}
   particlesMetalImpactDoor:
   - {fileID: 0}
@@ -328,6 +399,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3703841356984110849, guid: 8bd51f119d9b05a40b6b8c8128927c84, type: 3}
+--- !u!1001 &737376314032963624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1653516284943947067}
+    m_Modifications:
+    - target: {fileID: 7612447617513290822, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_Name
+      value: Blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+--- !u!198 &5171387888809412646 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5620450808857806862, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+  m_PrefabInstance: {fileID: 737376314032963624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8732086249036877943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8292593610999877727, guid: b605d7ed13088354496e4a4672506e0b, type: 3}
+  m_PrefabInstance: {fileID: 737376314032963624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6659945549955145246
 PrefabInstance:
   m_ObjectHideFlags: 0
