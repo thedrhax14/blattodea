@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 5099553940886325693}
   - component: {fileID: 736790540502968372}
   - component: {fileID: 6966497481345141814}
+  - component: {fileID: 168027073926424706}
   m_Layer: 0
   m_Name: barnacle
   m_TagString: Untagged
@@ -170,11 +171,11 @@ MonoBehaviour:
   hideTargetPoint: {fileID: 4619055904946907980}
   speedAttack: 0.09
   speedHide: 0.07
-  tongue: {fileID: 0}
+  tongue: {fileID: 4519421843158058108}
   audioSource: {fileID: 6966497481345141814}
   tagToAttack: Player
   triggerAttack: {fileID: 1233453055235195681}
-  animationAttack: {fileID: 0}
+  animationAttack: {fileID: 168027073926424706}
 --- !u!82 &6966497481345141814
 AudioSource:
   m_ObjectHideFlags: 0
@@ -272,6 +273,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &168027073926424706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588564608899699463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0984bee6741af845b663361be0983ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 4d02e8c6f48662548980f44e2ce43b16, type: 2}
+  playAutomatically: 0
+  wrapMode: 1
 --- !u!1 &7606639123156837802
 GameObject:
   m_ObjectHideFlags: 0
