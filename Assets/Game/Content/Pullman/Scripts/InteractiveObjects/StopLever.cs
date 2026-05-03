@@ -5,48 +5,56 @@ public class StopLever : MonoBehaviour, IInteractable
     [SerializeField]
     AudioSource audioSource;
     [SerializeField]
-    new SimpleAnimation animation;
-    [SerializeField]
-    InteractObjectData interactObjectData;
-    IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
-    bool IInteractable.CanShow => !GameStates.Instance.StopLeverActivated;
+    using UnityEngine;
 
-    private void OnEnable()
+    public class StopLever : MonoBehaviour, IInteractable
     {
-        GameEvents.Instance.StopLeverActivated += OnStopLeverActivated;
-    }
+        [SerializeField]
+        AudioSource audioSource;
+        [SerializeField]
+        new SimpleAnimation animation;
+        [SerializeField]
+        InteractObjectData interactObjectData;
+        IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
+        bool IInteractable.CanShow => !GameStates.Instance.StopLeverActivated;
 
-    private void OnDisable()
-    {
-        GameEvents.Instance.StopLeverActivated -= OnStopLeverActivated;
-    }
-
-
-    void IInteractable.Interact()
-    {
-        if (!GameStates.Instance.StopLeverActivated)
+        private void OnEnable()
         {
-            if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+            GameEvents.Instance.StopLeverActivated += OnStopLeverActivated;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.Instance.StopLeverActivated -= OnStopLeverActivated;
+        }
+
+        void IInteractable.Interact()
+        {
+            if (!GameStates.Instance.StopLeverActivated)
             {
-                sequenceNetwork.RequestStopLeverActivation();
+                if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+                {
+                    sequenceNetwork.RequestStopLeverActivation();
+                }
+                else
+                {
+                    GameEvents.Instance.ActivateStopLever();
+                }
             }
-            else
+        }
+
+        void IInteractable.Stop()
+        {
+        }
+
+        private void OnStopLeverActivated()
+        {
+            audioSource.Play();
+            if (animation != null)
             {
-                GameEvents.Instance.ActivateStopLever();
+                animation.Animation.ChangeDirection(true);
+                animation.Play();
             }
         }
     }
-
-    void IInteractable.Stop()
-    {
-    }
-
-    private void OnStopLeverActivated()
-    {
-        audioSource.Play();
         if (animation != null)
-        {
-            animation.Play();
-        }
-    }
-}

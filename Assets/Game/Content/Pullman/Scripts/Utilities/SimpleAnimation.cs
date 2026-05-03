@@ -27,17 +27,17 @@ public class SimpleAnimation : MonoBehaviour
     public Animation Animation => animation;
     public void Play()
     {
-        if(animation == null) Debug.LogError("No animation clip assigned to " + gameObject.name, this);
+        if (animation == null) Debug.LogError("No animation clip assigned to " + gameObject.name, this);
         else animation.Play();
     }
     public void Stop()
     {
-        if(animation == null) Debug.LogError("No animation clip assigned to " + gameObject.name, this);
+        if (animation == null) Debug.LogError("No animation clip assigned to " + gameObject.name, this);
         else animation.Stop();
     }
     public void SetAnimationClip(AnimationClip clip)
     {
-        if(animation == null) Debug.LogError("No animation component found on " + gameObject.name, this);
+        if (animation == null) Debug.LogError("No animation component found on " + gameObject.name, this);
         else animation.clip = clip;
     }
 }

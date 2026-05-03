@@ -6,17 +6,25 @@ public class StationDoorActivator : MonoBehaviour, IInteractable
     [SerializeField]
     InteractObjectData interactObjectData;
     bool IInteractable.CanShow => !GameStates.Instance.MainDoorStartsOpening && !GameStates.Instance.MainDoorOpened;
-    Action interact = delegate { };
+    Action interactAction = delegate { };
     IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
     void IInteractable.Interact()
     {
-        interact();
+        interactAction();
     }
     void IInteractable.Stop()
     {
     }
-    public void Init(Action interact)
+
+    public void SetupInteraction(Action interactAction, bool append = false)
     {
-        this.interact = interact;
+        if (append)
+        {
+            this.interactAction += interactAction;
+        }
+        else
+        {
+            this.interactAction = interactAction;
+        }
     }
 }

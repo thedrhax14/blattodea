@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,13 +26,11 @@ public class InteractObjectData : IInteractable.IObjectData
     public bool LockCamera;
     public Sprite Icon;
     string IInteractable.IObjectData.InteractText => InteractText;
-
     KeyCode IInteractable.IObjectData.InteractKey => InteractKey;
-
     bool IInteractable.IObjectData.LockCamera => LockCamera;
-
     Sprite IInteractable.IObjectData.Icon => Icon;
 }
+
 public class InteractionManager : MonoBehaviour
 {
     [SerializeField]
@@ -44,49 +41,57 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private LayerMask interactLayer;
     Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
     bool updateCursor = true;
+
     public bool CameraIsLocked { get; private set; } = false;
+
     private void Awake()
     {
         interactIcon.gameObject.SetActive(value: false);
         interactText.gameObject.SetActive(false);
-        
     }
+
     private void Update()
     {
-        if(Camera.main == null) {
+        if (Camera.main == null)
+        {
             Debug.Log("Waiting for camera...");
             return;
         }
-        if(updateCursor)
+
+        if (updateCursor)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             updateCursor = false;
         }
-        if (interactIcon == null) { return; }
+
+        if (interactIcon == null)
+        {
+            return;
+        }
+
         Ray ray = Camera.main.ViewportPointToRay(screenCenter);
-        RaycastHit hit;
         bool foundedInteractObject = false;
         IInteractable interactable = null;
-        if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
+
+        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance, interactLayer) && hit.collider.TryGetComponent(out interactable))
         {
-            if (hit.collider.TryGetComponent(out interactable))
+            foundedInteractObject = true;
+            if (Input.GetKeyDown(interactable.ObjectData.InteractKey))
             {
-                foundedInteractObject = true;
-                if (Input.GetKeyDown(interactable.ObjectData.InteractKey))
-                {
-                    interactable.Interact();
-                    CameraIsLocked = interactable.ObjectData.LockCamera;
-                    Cursor.lockState = CameraIsLocked ? CursorLockMode.Confined : CursorLockMode.Locked;
-                }
-                if (Input.GetKeyUp(interactable.ObjectData.InteractKey))
-                {
-                    interactable.Stop();
-                    CameraIsLocked = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
+                interactable.Interact();
+                CameraIsLocked = interactable.ObjectData.LockCamera;
+                Cursor.lockState = CameraIsLocked ? CursorLockMode.Confined : CursorLockMode.Locked;
+            }
+
+            if (Input.GetKeyUp(interactable.ObjectData.InteractKey))
+            {
+                interactable.Stop();
+                CameraIsLocked = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
+
         if (foundedInteractObject && interactable.CanShow)
         {
             interactIcon.gameObject.SetActive(true);

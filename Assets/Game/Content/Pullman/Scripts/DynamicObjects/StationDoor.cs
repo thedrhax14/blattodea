@@ -3,6 +3,12 @@ using UnityEngine;
 public class StationDoor : MonoBehaviour
 {
     [SerializeField]
+    string tagForActivate;
+    [SerializeField]
+    ParticleSystem particlesSmashEffect;
+    [SerializeField]
+    Trigger triggerSmash;
+    [SerializeField]
     StationDoorActivator doorActivator;
     [SerializeField]
     ParticleSystem[] particlesMetalImpactDoor;
@@ -11,12 +17,13 @@ public class StationDoor : MonoBehaviour
     [SerializeField]
     Animator animator;
     [SerializeField]
-    AudioClip audioClipValve, audioClipDoorOpen;
+    AudioClip audioClipValve, audioClipDoorOpen, audioClipSmashed;
     AudioSource audioSource;
+
     private void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        doorActivator.Init(() =>
+        doorActivator.SetupInteraction(() =>
         {
             if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
             {
@@ -26,8 +33,14 @@ public class StationDoor : MonoBehaviour
             {
                 GameEvents.Instance.RaiseMainDoorOpeningStarted();
             }
-        });
+        }, true);
+
+        if (triggerSmash != null)
+        {
+            triggerSmash.OnTriggerEnterAction += TriggerSmash_OnTriggerEnterAction;
+        }
     }
+
     private void OnEnable()
     {
         GameEvents.Instance.MainDoorOpeningStarted += startRotateValve;
@@ -36,6 +49,22 @@ public class StationDoor : MonoBehaviour
     private void OnDisable()
     {
         GameEvents.Instance.MainDoorOpeningStarted -= startRotateValve;
+        if (triggerSmash != null)
+        {
+            triggerSmash.OnTriggerEnterAction -= TriggerSmash_OnTriggerEnterAction;
+        }
+    }
+
+    private void TriggerSmash_OnTriggerEnterAction(Collider val)
+    {
+        if (!val.CompareTag(tagForActivate))
+        {
+            return;
+        }
+
+        audioSource.clip = audioClipSmashed;
+        audioSource.Play();
+        particlesSmashEffect.Play();
     }
 
     void startRotateValve()
@@ -44,8 +73,8 @@ public class StationDoor : MonoBehaviour
         audioSource.clip = audioClipValve;
         audioSource.Play();
         animator.SetTrigger("Activate");
-       
     }
+
     public void OpeningDoorEffects()
     {
         foreach (var particle in particlesMetalImpactDoor)
