@@ -37,6 +37,17 @@ public class StopLever : MonoBehaviour, IInteractable
         }
     }
 
+    void IInteractable.Interact()
+    {
+        audioSource.Play();
+        animation.Animation.ChangeDirection(true);
+        animation.Play();
+        if (!GameStates.Instance.StopLeverActivated)
+        {
+            GameEvents.Instance.ActivateStopLever();
+        }
+    }
+
     void IInteractable.Stop()
     {
     }

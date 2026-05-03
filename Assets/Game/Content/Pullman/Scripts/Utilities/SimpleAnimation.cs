@@ -39,5 +39,6 @@ public class SimpleAnimation : MonoBehaviour
     {
         if(animation == null) Debug.LogError("No animation component found on " + gameObject.name, this);
         else animation.clip = clip;
+        animation.Play();
     }
 }

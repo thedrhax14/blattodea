@@ -51,6 +51,7 @@ public class InteractionManager : MonoBehaviour
         interactText.gameObject.SetActive(false);
         
     }
+    
     private void Update()
     {
         if(Camera.main == null) {
@@ -63,6 +64,8 @@ public class InteractionManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             updateCursor = false;
         }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         if (interactIcon == null) { return; }
         Ray ray = Camera.main.ViewportPointToRay(screenCenter);
         RaycastHit hit;

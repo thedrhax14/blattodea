@@ -3,6 +3,10 @@ using UnityEngine;
 public class StationDoor : MonoBehaviour
 {
     [SerializeField]
+    ParticleSystem particlesSmashEffect;
+    [SerializeField]
+    Trigger triggerSmash;
+    [SerializeField]
     StationDoorActivator doorActivator;
     [SerializeField]
     ParticleSystem[] particlesMetalImpactDoor;
@@ -38,6 +42,15 @@ public class StationDoor : MonoBehaviour
         GameEvents.Instance.MainDoorOpeningStarted -= startRotateValve;
     }
 
+        doorActivator.SetupInteraction(() =>
+        {
+            startRotateValve();
+        }, true);
+        triggerSmash.OnTriggerEnterAction += (val) =>
+        {
+            particlesSmashEffect.Play();
+        };
+    }
     void startRotateValve()
     {
         particlesMetalImpactValve.Play();
@@ -45,6 +58,7 @@ public class StationDoor : MonoBehaviour
         audioSource.Play();
         animator.SetTrigger("Activate");
        
+
     }
     public void OpeningDoorEffects()
     {
@@ -65,5 +79,6 @@ public class StationDoor : MonoBehaviour
         {
             GameEvents.Instance.RaiseMainDoorOpened();
         }
+        GameEvents.Instance.RaiseMainDoorOpened();
     }
 }
