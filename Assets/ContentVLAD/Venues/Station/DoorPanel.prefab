@@ -631,11 +631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
       propertyPath: lengthInSec
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5670628078452252750, guid: bfdbae588d2a20d45ad46f96197b2197, type: 3}
       propertyPath: ShapeModule.type

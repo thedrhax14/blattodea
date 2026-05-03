@@ -3,6 +3,8 @@ using UnityEngine;
 public class StationDoor : MonoBehaviour
 {
     [SerializeField]
+    string tagForActivate;
+    [SerializeField]
     ParticleSystem particlesSmashEffect;
     [SerializeField]
     Trigger triggerSmash;
@@ -15,8 +17,9 @@ public class StationDoor : MonoBehaviour
     [SerializeField]
     Animator animator;
     [SerializeField]
-    AudioClip audioClipValve, audioClipDoorOpen;
+    AudioClip audioClipValve, audioClipDoorOpen, audioClipSmashed;
     AudioSource audioSource;
+
     private void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -26,7 +29,13 @@ public class StationDoor : MonoBehaviour
         }, true);
         triggerSmash.OnTriggerEnterAction += (val) =>
         {
-            particlesSmashEffect.Play();
+            if (val.CompareTag(tagForActivate))
+            {
+                audioSource.clip = audioClipSmashed;
+                audioSource.Play();
+                //particlesSmashEffect.transform.position = triggerSmash.ClosestCollisionPoint;
+                particlesSmashEffect.Play();
+            }
         };
     }
     void startRotateValve()

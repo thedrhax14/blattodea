@@ -20,7 +20,7 @@ public class StationDoorPanelLever : MonoBehaviour, IInteractable
     {
         interactAction();
         rigidbody.isKinematic = false;
-        rigidbody.AddRelativeForce(new Vector3(0, 0, -2), ForceMode.Impulse);
+        rigidbody.AddRelativeForce(new Vector3(0.5f, 0, -2), ForceMode.Impulse);
     }
     void IInteractable.Stop()
     {

@@ -6,9 +6,12 @@ using UnityEngine;
 public class Trigger : MonoBehaviour
 {
     [SerializeField]
+    bool ProvideClosestPoint;
+    [SerializeField]
     private new Collider collider;
     public event Action<Collider> OnTriggerEnterAction = delegate { };
     public event Action<Collider> OnTriggerExitAction = delegate { };
+    public Vector3 ClosestCollisionPoint { get; private set; } = Vector3.zero;
     private void Awake()
     {
         collider.isTrigger = true;
@@ -20,6 +23,10 @@ public class Trigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (ProvideClosestPoint)
+        {
+            ClosestCollisionPoint = other.ClosestPoint(transform.position);
+        }
         OnTriggerEnterAction(other);
     }
     private void OnTriggerExit(Collider other)
