@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 736790540502968372}
   - component: {fileID: 6966497481345141814}
   - component: {fileID: 168027073926424706}
+  - component: {fileID: 7666927218938654515}
   m_Layer: 0
   m_Name: barnacle
   m_TagString: Untagged
@@ -190,7 +191,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 883d00a32e60c7b4da7d6924ca65041b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -288,6 +289,29 @@ MonoBehaviour:
   clip: {fileID: 7400000, guid: 4d02e8c6f48662548980f44e2ce43b16, type: 2}
   playAutomatically: 0
   wrapMode: 1
+--- !u!164 &7666927218938654515
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588564608899699463}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -1000
+  m_DecayTime: 2.81
+  m_DecayHFRatio: 0.14
+  m_ReflectionsLevel: 429
+  m_ReverbLevel: 1023
+  m_ReverbDelay: 0.021
+  m_Diffusion: 80
+  m_Density: 60
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 22
 --- !u!1 &7606639123156837802
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,8 +426,8 @@ Transform:
   m_GameObject: {fileID: 8880475234589311991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2.36}
+  m_LocalPosition: {x: 0, y: -4.43, z: 0}
+  m_LocalScale: {x: 1, y: 9.381905, z: 1.1377324}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5099553940886325693}
