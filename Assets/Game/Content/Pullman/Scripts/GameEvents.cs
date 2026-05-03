@@ -40,10 +40,25 @@ public class GameEvents
     {
         TrainStopCutsceneEnded();
     }
+    public event Action MainDoorPanelLeverPulled = delegate { };
+    public void RaiseMainDoorPanelLeverPulled()
+    {
+        MainDoorPanelLeverPulled();
+    }
     public event Action MainDoorOpeningStarted = delegate { };
     public void RaiseMainDoorOpeningStarted()
     {
         MainDoorOpeningStarted();
+    }
+    public event Action MainDoorOpeningEffectsTriggered = delegate { };
+    public void RaiseMainDoorOpeningEffectsTriggered()
+    {
+        MainDoorOpeningEffectsTriggered();
+    }
+    public event Action MainDoorSmashEffectsTriggered = delegate { };
+    public void RaiseMainDoorSmashEffectsTriggered()
+    {
+        MainDoorSmashEffectsTriggered();
     }
     public event Action MainDoorOpened = delegate { };
     public void RaiseMainDoorOpened()

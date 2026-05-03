@@ -44,11 +44,15 @@ public class StationDoor : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.Instance.MainDoorOpeningStarted += startRotateValve;
+        GameEvents.Instance.MainDoorOpeningEffectsTriggered += PlayOpeningDoorEffects;
+        GameEvents.Instance.MainDoorSmashEffectsTriggered += PlaySmashEffects;
     }
 
     private void OnDisable()
     {
         GameEvents.Instance.MainDoorOpeningStarted -= startRotateValve;
+        GameEvents.Instance.MainDoorOpeningEffectsTriggered -= PlayOpeningDoorEffects;
+        GameEvents.Instance.MainDoorSmashEffectsTriggered -= PlaySmashEffects;
         if (triggerSmash != null)
         {
             triggerSmash.OnTriggerEnterAction -= TriggerSmash_OnTriggerEnterAction;
@@ -62,9 +66,14 @@ public class StationDoor : MonoBehaviour
             return;
         }
 
-        audioSource.clip = audioClipSmashed;
-        audioSource.Play();
-        particlesSmashEffect.Play();
+        if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+        {
+            sequenceNetwork.ReportMainDoorSmashEffects();
+        }
+        else
+        {
+            GameEvents.Instance.RaiseMainDoorSmashEffectsTriggered();
+        }
     }
 
     void startRotateValve()
@@ -77,6 +86,17 @@ public class StationDoor : MonoBehaviour
 
     public void OpeningDoorEffects()
     {
+        if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
+        {
+            sequenceNetwork.ReportMainDoorOpeningEffects();
+            return;
+        }
+
+        GameEvents.Instance.RaiseMainDoorOpeningEffectsTriggered();
+    }
+
+    private void PlayOpeningDoorEffects()
+    {
         foreach (var particle in particlesMetalImpactDoor)
         {
             particle.Play();
@@ -84,6 +104,14 @@ public class StationDoor : MonoBehaviour
         audioSource.clip = audioClipDoorOpen;
         audioSource.Play();
     }
+
+    private void PlaySmashEffects()
+    {
+        audioSource.clip = audioClipSmashed;
+        audioSource.Play();
+        particlesSmashEffect.Play();
+    }
+
     public void MarkDoorOpened()
     {
         if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))

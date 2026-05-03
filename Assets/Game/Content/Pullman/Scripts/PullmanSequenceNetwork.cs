@@ -14,7 +14,10 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
 
     private bool _stopLeverActivated;
     private bool _trainStopCutsceneActive;
+    private bool _mainDoorPanelLeverPulled;
     private bool _mainDoorOpeningStarted;
+    private bool _mainDoorOpeningEffectsTriggered;
+    private bool _mainDoorSmashEffectsTriggered;
     private bool _mainDoorOpened;
 
     private void Awake()
@@ -107,6 +110,57 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
         ServerRequestMainDoorOpening();
     }
 
+    public void RequestMainDoorPanelLeverPull()
+    {
+        if (!IsNetworkRunning())
+        {
+            PullMainDoorPanelLeverLocally();
+            return;
+        }
+
+        if (IsServerStarted)
+        {
+            PullMainDoorPanelLeverOnServer();
+            return;
+        }
+
+        ServerRequestMainDoorPanelLeverPull();
+    }
+
+    public void ReportMainDoorOpeningEffects()
+    {
+        if (!IsNetworkRunning())
+        {
+            TriggerMainDoorOpeningEffectsLocally();
+            return;
+        }
+
+        if (IsServerStarted)
+        {
+            TriggerMainDoorOpeningEffectsOnServer();
+            return;
+        }
+
+        ServerReportMainDoorOpeningEffects();
+    }
+
+    public void ReportMainDoorSmashEffects()
+    {
+        if (!IsNetworkRunning())
+        {
+            TriggerMainDoorSmashEffectsLocally();
+            return;
+        }
+
+        if (IsServerStarted)
+        {
+            TriggerMainDoorSmashEffectsOnServer();
+            return;
+        }
+
+        ServerReportMainDoorSmashEffects();
+    }
+
     public void ReportMainDoorOpened()
     {
         if (!IsNetworkRunning())
@@ -138,6 +192,24 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
+    private void ServerRequestMainDoorPanelLeverPull()
+    {
+        PullMainDoorPanelLeverOnServer();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ServerReportMainDoorOpeningEffects()
+    {
+        TriggerMainDoorOpeningEffectsOnServer();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ServerReportMainDoorSmashEffects()
+    {
+        TriggerMainDoorSmashEffectsOnServer();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
     private void ServerReportMainDoorOpened()
     {
         MarkMainDoorOpenedOnServer();
@@ -162,9 +234,27 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
     }
 
     [ObserversRpc(ExcludeServer = true)]
+    private void ObserversPullMainDoorPanelLever()
+    {
+        PullMainDoorPanelLeverLocally();
+    }
+
+    [ObserversRpc(ExcludeServer = true)]
     private void ObserversStartMainDoorOpening()
     {
         StartMainDoorOpeningLocally();
+    }
+
+    [ObserversRpc(ExcludeServer = true)]
+    private void ObserversTriggerMainDoorOpeningEffects()
+    {
+        TriggerMainDoorOpeningEffectsLocally();
+    }
+
+    [ObserversRpc(ExcludeServer = true)]
+    private void ObserversTriggerMainDoorSmashEffects()
+    {
+        TriggerMainDoorSmashEffectsLocally();
     }
 
     [ObserversRpc(ExcludeServer = true)]
@@ -207,9 +297,60 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
         }
 
         _mainDoorOpeningStarted = true;
+        _mainDoorOpeningEffectsTriggered = false;
+        _mainDoorSmashEffectsTriggered = false;
         _gameLifecycle?.TryBeginDoorOpens();
         StartMainDoorOpeningLocally();
         ObserversStartMainDoorOpening();
+    }
+
+    [Server]
+    private void PullMainDoorPanelLeverOnServer()
+    {
+        if (_mainDoorPanelLeverPulled)
+        {
+            return;
+        }
+
+        _mainDoorPanelLeverPulled = true;
+        PullMainDoorPanelLeverLocally();
+        ObserversPullMainDoorPanelLever();
+    }
+
+    [Server]
+    private void TriggerMainDoorOpeningEffectsOnServer()
+    {
+        if (_mainDoorOpeningEffectsTriggered)
+        {
+            return;
+        }
+
+        if (!_mainDoorOpeningStarted)
+        {
+            return;
+        }
+
+        _mainDoorOpeningEffectsTriggered = true;
+        TriggerMainDoorOpeningEffectsLocally();
+        ObserversTriggerMainDoorOpeningEffects();
+    }
+
+    [Server]
+    private void TriggerMainDoorSmashEffectsOnServer()
+    {
+        if (_mainDoorSmashEffectsTriggered)
+        {
+            return;
+        }
+
+        if (!_mainDoorOpeningStarted)
+        {
+            return;
+        }
+
+        _mainDoorSmashEffectsTriggered = true;
+        TriggerMainDoorSmashEffectsLocally();
+        ObserversTriggerMainDoorSmashEffects();
     }
 
     [Server]
@@ -288,6 +429,21 @@ public sealed class PullmanSequenceNetwork : NetworkBehaviour
     private static void StartMainDoorOpeningLocally()
     {
         GameEvents.Instance.RaiseMainDoorOpeningStarted();
+    }
+
+    private static void PullMainDoorPanelLeverLocally()
+    {
+        GameEvents.Instance.RaiseMainDoorPanelLeverPulled();
+    }
+
+    private static void TriggerMainDoorOpeningEffectsLocally()
+    {
+        GameEvents.Instance.RaiseMainDoorOpeningEffectsTriggered();
+    }
+
+    private static void TriggerMainDoorSmashEffectsLocally()
+    {
+        GameEvents.Instance.RaiseMainDoorSmashEffectsTriggered();
     }
 
     private static void MarkMainDoorOpenedLocally()

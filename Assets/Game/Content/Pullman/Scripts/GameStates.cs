@@ -17,6 +17,7 @@ public class GameStates
     public bool StopLeverActivated { get; private set; } = false;
     public bool CarriageStopped { get; private set; } = false;
     public bool CarriageStartsStopping { get; private set; } = false;
+    public bool MainDoorPanelLeverPulled { get; private set; } = false;
     public bool MainDoorStartsOpening { get; private set; } = false;
     public bool MainDoorOpened { get; private set; } = false;
     private GameStates()
@@ -32,6 +33,10 @@ public class GameStates
         GameEvents.Instance.CarriageStartStopping += () =>
         {
             CarriageStartsStopping = true;
+        };
+        GameEvents.Instance.MainDoorPanelLeverPulled += () =>
+        {
+            MainDoorPanelLeverPulled = true;
         };
         GameEvents.Instance.MainDoorOpeningStarted += () =>
         {

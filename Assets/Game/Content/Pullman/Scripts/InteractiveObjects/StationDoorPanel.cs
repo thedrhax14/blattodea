@@ -19,17 +19,28 @@ public class StationDoorPanel : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         brokenLever.gameObject.SetActive(false);
         textMesh.gameObject.SetActive(false);
-        lever.SetupInteraction(() =>
-        {
-            brokenLever.gameObject.SetActive(true);
-            particlesMetalImpact.Play();
-            audioSource.clip = audioClipLeverBreaking;
-            audioSource.Play();
-        });
         brokenLever.SetupInteraction(() =>
         {
             textMesh.gameObject.SetActive(true);
             textMesh.text = "Success";
         }, true);
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.Instance.MainDoorPanelLeverPulled += OnMainDoorPanelLeverPulled;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.MainDoorPanelLeverPulled -= OnMainDoorPanelLeverPulled;
+    }
+
+    private void OnMainDoorPanelLeverPulled()
+    {
+        brokenLever.gameObject.SetActive(true);
+        particlesMetalImpact.Play();
+        audioSource.clip = audioClipLeverBreaking;
+        audioSource.Play();
     }
 }
