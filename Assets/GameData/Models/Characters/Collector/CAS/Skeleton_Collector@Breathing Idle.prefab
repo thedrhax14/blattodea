@@ -1,0 +1,1438 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &76358620344091885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7530779587293647366}
+  m_Layer: 0
+  m_Name: IK hand_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7530779587293647366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76358620344091885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5555556, y: 0.5555556, z: 0.5555556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6076778985341381867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2425839065173394118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2897444884368948331}
+  m_Layer: 0
+  m_Name: IK foot_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2897444884368948331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425839065173394118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5555556, y: 0.5555556, z: 0.5555556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6076778985341381867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4552162618592670428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6134072813352819077}
+  m_Layer: 0
+  m_Name: IK hand_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6134072813352819077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552162618592670428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5555556, y: 0.5555556, z: 0.5555556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6076778985341381867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9019835252346230395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682892830326020834}
+  m_Layer: 0
+  m_Name: IK foot_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682892830326020834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9019835252346230395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5555556, y: 0.5555556, z: 0.5555556}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6076778985341381867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3418058832285424542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_Name
+      value: Skeleton_Collector@Breathing Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 57041371b0edbfc45b7f9c4bbe10a7a6, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8879528566716807029, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6134072813352819077}
+    - targetCorrespondingSourceObject: {fileID: 8879528566716807029, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7530779587293647366}
+    - targetCorrespondingSourceObject: {fileID: 8879528566716807029, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 682892830326020834}
+    - targetCorrespondingSourceObject: {fileID: 8879528566716807029, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2897444884368948331}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6643243243386808154}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2856356495596709105}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1143422063119341976}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6161124447887297575}
+    - targetCorrespondingSourceObject: {fileID: 7036213049465896255, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8272808996537857934}
+  m_SourcePrefab: {fileID: 100100000, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+--- !u!4 &34210407721836854 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3393154777153272488, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &280458150427881357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3209660629809869843, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &339390517989652407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6063354155749413847, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &439910789557009524 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2987437885464668138, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &580013995360005899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2838391200542782613, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &873892091108080845 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2544483624133551955, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1010374298411811216 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2408001348110326286, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1015233642080343990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2412161367050800168, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1148138527212641111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6881390770214846263, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1222980849529359753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4582277379452294679, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1403140088281351416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4330094614076497766, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1983292508816649730 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3812702128279385500, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2039291680455628870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5538751756592888872, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2172478578324485193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5671910290767253545, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2247664995396481842 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5738099386740791124, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2266432350463740391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5756552144314822023, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2527154411280500910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 899914987519988528, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2571005305329510095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6643243243386808154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571005305329510095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7405c9c2574a434e8c3a5e3610359e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSettings: {fileID: 11400000, guid: ec3a2f68e58fe439b8285ba7f6ee2ff5, type: 2}
+--- !u!114 &2856356495596709105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571005305329510095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60311a22a5a8487d8be3e3fbe6e655ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalWeight: 1
+  proceduralSettings: {fileID: 0}
+  showModifierGizmos: 1
+--- !u!114 &1143422063119341976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571005305329510095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ef972d6aa4464f800c4a5e5ce93fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalWeight: 1
+  layeredBlends:
+  - layer:
+      chainName: LowerBody
+      elementChain:
+      - name: Armature
+        index: 0
+        depth: 0
+      - name: mixamorig:Hips
+        index: 1
+        depth: 1
+      - name: mixamorig:LeftUpLeg
+        index: 2
+        depth: 2
+      - name: mixamorig:LeftLeg
+        index: 3
+        depth: 3
+      - name: mixamorig:LeftFoot
+        index: 4
+        depth: 4
+      - name: mixamorig:LeftToeBase
+        index: 5
+        depth: 5
+      - name: mixamorig:LeftToe_End
+        index: 6
+        depth: 6
+      - name: mixamorig:RightUpLeg
+        index: 7
+        depth: 2
+      - name: mixamorig:RightLeg
+        index: 8
+        depth: 3
+      - name: mixamorig:RightFoot
+        index: 9
+        depth: 4
+      - name: mixamorig:RightToeBase
+        index: 10
+        depth: 5
+      - name: mixamorig:RightToe_End
+        index: 11
+        depth: 6
+    baseWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_LowerBody.baseWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    additiveWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_LowerBody.additiveWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    localWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_LowerBody.localWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - layer:
+      chainName: Spine
+      elementChain:
+      - name: mixamorig:Spine
+        index: 12
+        depth: 2
+      - name: mixamorig:Spine1
+        index: 13
+        depth: 3
+      - name: mixamorig:Spine2
+        index: 14
+        depth: 4
+    baseWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Spine.baseWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    additiveWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Spine.additiveWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    localWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Spine.localWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - layer:
+      chainName: Head
+      elementChain:
+      - name: mixamorig:Neck
+        index: 27
+        depth: 5
+      - name: mixamorig:Head
+        index: 28
+        depth: 6
+      - name: mixamorig:HeadTop_End
+        index: 29
+        depth: 7
+    baseWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Head.baseWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    additiveWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Head.additiveWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    localWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Head.localWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - layer:
+      chainName: RightArm
+      elementChain:
+      - name: mixamorig:RightShoulder
+        index: 30
+        depth: 5
+      - name: mixamorig:RightArm
+        index: 31
+        depth: 6
+      - name: mixamorig:RightForeArm
+        index: 32
+        depth: 7
+      - name: mixamorig:RightHand
+        index: 33
+        depth: 8
+    baseWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Arm_R.baseWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    additiveWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Arm_R.additiveWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    localWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Arm_R.localWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - layer:
+      chainName: LeftArm
+      elementChain:
+      - name: mixamorig:LeftShoulder
+        index: 15
+        depth: 5
+      - name: mixamorig:LeftArm
+        index: 16
+        depth: 6
+      - name: mixamorig:LeftForeArm
+        index: 17
+        depth: 7
+      - name: mixamorig:LeftHand
+        index: 18
+        depth: 8
+    baseWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Arm_L.baseWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    additiveWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Arm_L.additiveWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    localWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Arm_L.localWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - layer:
+      chainName: Fingers
+      elementChain:
+      - name: mixamorig:LeftHandIndex1
+        index: 19
+        depth: 9
+      - name: mixamorig:LeftHandIndex2
+        index: 20
+        depth: 10
+      - name: mixamorig:LeftHandIndex3
+        index: 21
+        depth: 11
+      - name: mixamorig:LeftHandIndex4
+        index: 22
+        depth: 12
+      - name: mixamorig:LeftHandThumb1
+        index: 23
+        depth: 9
+      - name: mixamorig:LeftHandThumb2
+        index: 24
+        depth: 10
+      - name: mixamorig:LeftHandThumb3
+        index: 25
+        depth: 11
+      - name: mixamorig:LeftHandThumb4
+        index: 26
+        depth: 12
+      - name: mixamorig:RightHandIndex1
+        index: 34
+        depth: 9
+      - name: mixamorig:RightHandIndex2
+        index: 35
+        depth: 10
+      - name: mixamorig:RightHandIndex3
+        index: 36
+        depth: 11
+      - name: mixamorig:RightHandIndex4
+        index: 37
+        depth: 12
+      - name: mixamorig:RightHandThumb1
+        index: 38
+        depth: 9
+      - name: mixamorig:RightHandThumb2
+        index: 39
+        depth: 10
+      - name: mixamorig:RightHandThumb3
+        index: 40
+        depth: 11
+      - name: mixamorig:RightHandThumb4
+        index: 41
+        depth: 12
+    baseWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Fingers.baseWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    additiveWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Fingers.additiveWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+    localWeight:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Layering_Fingers.localWeight
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  alwaysAnimatePoses: 1
+  linkAnimatorParameters: 1
+  applyRootMotion: 1
+  overlayParameters:
+  - property:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Mask_Look_Rotation.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - property:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Mask_Attach_Hand.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  - property:
+      objectType: KINEMATION.CharacterAnimationSystem.Scripts.Runtime.Core.LayeredBlendingComponent,
+        CAS.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      propertyPath: Enable_HandL_IK.value
+      defaultValue: 0
+      isBound: 1
+      friendlyObjectType: LayeredBlendingComponent
+  Layering_LowerBody:
+    baseWeight: 0
+    additiveWeight: 0
+    localWeight: 0
+  Layering_Spine:
+    baseWeight: 0
+    additiveWeight: 0
+    localWeight: 0
+  Layering_Head:
+    baseWeight: 0
+    additiveWeight: 0
+    localWeight: 0
+  Layering_Arm_R:
+    baseWeight: 0
+    additiveWeight: 0
+    localWeight: 0
+  Layering_Arm_L:
+    baseWeight: 0
+    additiveWeight: 0
+    localWeight: 0
+  Layering_Fingers:
+    baseWeight: 0
+    additiveWeight: 0
+    localWeight: 0
+  Mask_Procedural_Animation:
+    value: 0
+  Weapon_Bone_Weight:
+    value: 0
+  Mask_Look_Rotation:
+    value: 0
+  Mask_Attach_Hand:
+    value: 0
+  Enable_HandR_IK:
+    value: 0
+  Enable_HandL_IK:
+    value: 0
+  Enable_FootR_IK:
+    value: 0
+  Enable_FootL_IK:
+    value: 0
+  Interaction_HandR_IK:
+    value: 0
+  Interaction_HandL_IK:
+    value: 0
+  Traversal_Weight:
+    value: 0
+--- !u!114 &6161124447887297575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571005305329510095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f93e93e0e4141fe8e3d80ca1b8ff1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pastTrajectoryPoints: 6
+  futureTrajectoryPoints: 6
+  trajectoryTimeDelta: 0.1
+  drawGizmos: 0
+  useDebugVelocity: 0
+  debugVelocity: {x: 0, y: 0, z: 0}
+  debugAngularVelocity: 0
+--- !u!4 &3005754180993197220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 493698198569549626, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3028502202228012417 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8833805373484061153, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3160773978806358271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8884984920518210719, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4569583389957668305 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8069032694317455793, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4610378381765656173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8028729752870558221, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4727643867361921303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7995179518529311369, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4860775057755596123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7789981938002673349, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4883974665889081690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7829577706673091268, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5368764722492355502 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1878338096449427408, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5433454104881749589 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7208261743932278219, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5677565890944804513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8272808996537857934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5677565890944804513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea4e6e0e6604595bf46d06cc6cca03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeleton:
+  - transform: {fileID: 6076778985341381867}
+    rigElement:
+      name: Armature
+      index: 0
+      depth: 0
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 2172478578324485193}
+    rigElement:
+      name: mixamorig:Hips
+      index: 1
+      depth: 1
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8317652345193412835}
+    rigElement:
+      name: mixamorig:LeftUpLeg
+      index: 2
+      depth: 2
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 339390517989652407}
+    rigElement:
+      name: mixamorig:LeftLeg
+      index: 3
+      depth: 3
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 6208885848998765958}
+    rigElement:
+      name: mixamorig:LeftFoot
+      index: 4
+      depth: 4
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8909144550111172770}
+    rigElement:
+      name: mixamorig:LeftToeBase
+      index: 5
+      depth: 5
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 280458150427881357}
+    rigElement:
+      name: mixamorig:LeftToe_End
+      index: 6
+      depth: 6
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 2247664995396481842}
+    rigElement:
+      name: mixamorig:RightUpLeg
+      index: 7
+      depth: 2
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8778232079548018143}
+    rigElement:
+      name: mixamorig:RightLeg
+      index: 8
+      depth: 3
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 1403140088281351416}
+    rigElement:
+      name: mixamorig:RightFoot
+      index: 9
+      depth: 4
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 2266432350463740391}
+    rigElement:
+      name: mixamorig:RightToeBase
+      index: 10
+      depth: 5
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 2527154411280500910}
+    rigElement:
+      name: mixamorig:RightToe_End
+      index: 11
+      depth: 6
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 4569583389957668305}
+    rigElement:
+      name: mixamorig:Spine
+      index: 12
+      depth: 2
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 4883974665889081690}
+    rigElement:
+      name: mixamorig:Spine1
+      index: 13
+      depth: 3
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 1148138527212641111}
+    rigElement:
+      name: mixamorig:Spine2
+      index: 14
+      depth: 4
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 2039291680455628870}
+    rigElement:
+      name: mixamorig:LeftShoulder
+      index: 15
+      depth: 5
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 4610378381765656173}
+    rigElement:
+      name: mixamorig:LeftArm
+      index: 16
+      depth: 6
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 3160773978806358271}
+    rigElement:
+      name: mixamorig:LeftForeArm
+      index: 17
+      depth: 7
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8221368325040242215}
+    rigElement:
+      name: mixamorig:LeftHand
+      index: 18
+      depth: 8
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8895503365407498550}
+    rigElement:
+      name: mixamorig:LeftHandIndex1
+      index: 19
+      depth: 9
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 3028502202228012417}
+    rigElement:
+      name: mixamorig:LeftHandIndex2
+      index: 20
+      depth: 10
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 1010374298411811216}
+    rigElement:
+      name: mixamorig:LeftHandIndex3
+      index: 21
+      depth: 11
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 439910789557009524}
+    rigElement:
+      name: mixamorig:LeftHandIndex4
+      index: 22
+      depth: 12
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 4727643867361921303}
+    rigElement:
+      name: mixamorig:LeftHandThumb1
+      index: 23
+      depth: 9
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 1983292508816649730}
+    rigElement:
+      name: mixamorig:LeftHandThumb2
+      index: 24
+      depth: 10
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 5990347930557962599}
+    rigElement:
+      name: mixamorig:LeftHandThumb3
+      index: 25
+      depth: 11
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 5368764722492355502}
+    rigElement:
+      name: mixamorig:LeftHandThumb4
+      index: 26
+      depth: 12
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 5888410759083933335}
+    rigElement:
+      name: mixamorig:Neck
+      index: 27
+      depth: 5
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 5433454104881749589}
+    rigElement:
+      name: mixamorig:Head
+      index: 28
+      depth: 6
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8980231364448235658}
+    rigElement:
+      name: mixamorig:HeadTop_End
+      index: 29
+      depth: 7
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 9026935657018243337}
+    rigElement:
+      name: mixamorig:RightShoulder
+      index: 30
+      depth: 5
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 1222980849529359753}
+    rigElement:
+      name: mixamorig:RightArm
+      index: 31
+      depth: 6
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 580013995360005899}
+    rigElement:
+      name: mixamorig:RightForeArm
+      index: 32
+      depth: 7
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 1015233642080343990}
+    rigElement:
+      name: mixamorig:RightHand
+      index: 33
+      depth: 8
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8433978835726575810}
+    rigElement:
+      name: mixamorig:RightHandIndex1
+      index: 34
+      depth: 9
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 6498442564293582670}
+    rigElement:
+      name: mixamorig:RightHandIndex2
+      index: 35
+      depth: 10
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 3005754180993197220}
+    rigElement:
+      name: mixamorig:RightHandIndex3
+      index: 36
+      depth: 11
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 34210407721836854}
+    rigElement:
+      name: mixamorig:RightHandIndex4
+      index: 37
+      depth: 12
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 4860775057755596123}
+    rigElement:
+      name: mixamorig:RightHandThumb1
+      index: 38
+      depth: 9
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 8958988777274738887}
+    rigElement:
+      name: mixamorig:RightHandThumb2
+      index: 39
+      depth: 10
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 873892091108080845}
+    rigElement:
+      name: mixamorig:RightHandThumb3
+      index: 40
+      depth: 11
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 5820263116504608784}
+    rigElement:
+      name: mixamorig:RightHandThumb4
+      index: 41
+      depth: 12
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 6134072813352819077}
+    rigElement:
+      name: IK hand_r
+      index: 42
+      depth: 1
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 7530779587293647366}
+    rigElement:
+      name: IK hand_l
+      index: 43
+      depth: 1
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 682892830326020834}
+    rigElement:
+      name: IK foot_r
+      index: 44
+      depth: 1
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  - transform: {fileID: 2897444884368948331}
+    rigElement:
+      name: IK foot_l
+      index: 45
+      depth: 1
+    meshPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+  skeletonBoneChains:
+  - chainName: Armature
+    elementChain:
+    - name: Armature
+      index: 0
+      depth: 0
+  - chainName: mixamorig:Hips
+    elementChain:
+    - name: mixamorig:Hips
+      index: 1
+      depth: 1
+  - chainName: mixamorig:LeftUpLeg
+    elementChain:
+    - name: mixamorig:LeftUpLeg
+      index: 2
+      depth: 2
+    - name: mixamorig:LeftLeg
+      index: 3
+      depth: 3
+    - name: mixamorig:LeftFoot
+      index: 4
+      depth: 4
+    - name: mixamorig:LeftToeBase
+      index: 5
+      depth: 5
+    - name: mixamorig:LeftToe_End
+      index: 6
+      depth: 6
+  - chainName: mixamorig:RightUpLeg
+    elementChain:
+    - name: mixamorig:RightUpLeg
+      index: 7
+      depth: 2
+    - name: mixamorig:RightLeg
+      index: 8
+      depth: 3
+    - name: mixamorig:RightFoot
+      index: 9
+      depth: 4
+    - name: mixamorig:RightToeBase
+      index: 10
+      depth: 5
+    - name: mixamorig:RightToe_End
+      index: 11
+      depth: 6
+  - chainName: mixamorig:Spine
+    elementChain:
+    - name: mixamorig:Spine
+      index: 12
+      depth: 2
+    - name: mixamorig:Spine1
+      index: 13
+      depth: 3
+    - name: mixamorig:Spine2
+      index: 14
+      depth: 4
+  - chainName: mixamorig:LeftShoulder
+    elementChain:
+    - name: mixamorig:LeftShoulder
+      index: 15
+      depth: 5
+    - name: mixamorig:LeftArm
+      index: 16
+      depth: 6
+    - name: mixamorig:LeftForeArm
+      index: 17
+      depth: 7
+    - name: mixamorig:LeftHand
+      index: 18
+      depth: 8
+  - chainName: mixamorig:LeftHandIndex1
+    elementChain:
+    - name: mixamorig:LeftHandIndex1
+      index: 19
+      depth: 9
+    - name: mixamorig:LeftHandIndex2
+      index: 20
+      depth: 10
+    - name: mixamorig:LeftHandIndex3
+      index: 21
+      depth: 11
+    - name: mixamorig:LeftHandIndex4
+      index: 22
+      depth: 12
+  - chainName: mixamorig:LeftHandThumb1
+    elementChain:
+    - name: mixamorig:LeftHandThumb1
+      index: 23
+      depth: 9
+    - name: mixamorig:LeftHandThumb2
+      index: 24
+      depth: 10
+    - name: mixamorig:LeftHandThumb3
+      index: 25
+      depth: 11
+    - name: mixamorig:LeftHandThumb4
+      index: 26
+      depth: 12
+  - chainName: mixamorig:Neck
+    elementChain:
+    - name: mixamorig:Neck
+      index: 27
+      depth: 5
+    - name: mixamorig:Head
+      index: 28
+      depth: 6
+    - name: mixamorig:HeadTop_End
+      index: 29
+      depth: 7
+  - chainName: mixamorig:RightShoulder
+    elementChain:
+    - name: mixamorig:RightShoulder
+      index: 30
+      depth: 5
+    - name: mixamorig:RightArm
+      index: 31
+      depth: 6
+    - name: mixamorig:RightForeArm
+      index: 32
+      depth: 7
+    - name: mixamorig:RightHand
+      index: 33
+      depth: 8
+  - chainName: mixamorig:RightHandIndex1
+    elementChain:
+    - name: mixamorig:RightHandIndex1
+      index: 34
+      depth: 9
+    - name: mixamorig:RightHandIndex2
+      index: 35
+      depth: 10
+    - name: mixamorig:RightHandIndex3
+      index: 36
+      depth: 11
+    - name: mixamorig:RightHandIndex4
+      index: 37
+      depth: 12
+  - chainName: mixamorig:RightHandThumb1
+    elementChain:
+    - name: mixamorig:RightHandThumb1
+      index: 38
+      depth: 9
+    - name: mixamorig:RightHandThumb2
+      index: 39
+      depth: 10
+    - name: mixamorig:RightHandThumb3
+      index: 40
+      depth: 11
+    - name: mixamorig:RightHandThumb4
+      index: 41
+      depth: 12
+  - chainName: IK hand_r
+    elementChain:
+    - name: IK hand_r
+      index: 42
+      depth: 1
+  - chainName: IK hand_l
+    elementChain:
+    - name: IK hand_l
+      index: 43
+      depth: 1
+  - chainName: IK foot_r
+    elementChain:
+    - name: IK foot_r
+      index: 44
+      depth: 1
+  - chainName: IK foot_l
+    elementChain:
+    - name: IK foot_l
+      index: 45
+      depth: 1
+--- !u!4 &5820263116504608784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9199402762043059086, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5888410759083933335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9140253385185518857, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5990347930557962599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8957272431402484473, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6076778985341381867 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8879528566716807029, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6208885848998765958 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -484974042906411496, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6498442564293582670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -774485609497688880, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8221368325040242215 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6734931530170869177, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8317652345193412835 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2593687625098271875, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8433978835726575810 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2709793182783671460, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8778232079548018143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6250409095508506177, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8895503365407498550 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6060806385407736488, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8909144550111172770 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6110471695799780156, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8958988777274738887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3225744230849817767, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8980231364448235658 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6039136598254185236, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9026935657018243337 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3302972225415322985, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
+  m_PrefabInstance: {fileID: 3418058832285424542}
+  m_PrefabAsset: {fileID: 0}
