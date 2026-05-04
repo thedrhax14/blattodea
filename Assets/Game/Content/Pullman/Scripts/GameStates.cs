@@ -20,6 +20,11 @@ public class GameStates
 
     public bool CarriageStartsStopping { get; private set; } = false;
     public bool MainDoorOpened { get; private set; } = false;
+    public float CarriageSpeedPercentage { get; private set; } = 0;
+    public void SyncCarriageSpeedPercentage(float val)
+    {
+        CarriageSpeedPercentage = val;
+    }
     private GameStates()
     {
         GameEvents.Instance.CarriageStartsLeaving += () =>

@@ -102,7 +102,6 @@ public class LandscapeManager : MonoBehaviour
     }
     Transform getPartAvailable(Vector3 pos)
     {
-        Debug.Log("Get part:" + pos);
         var part = partsAvailable[Random.Range(0, partsAvailable.Count)];
         partsAvailable.Remove(part);
         activeParts.Add(part);
@@ -112,7 +111,6 @@ public class LandscapeManager : MonoBehaviour
     }
     void flushPart(Transform part)
     {
-        Debug.Log("Flush part:" + part.position.z);
         part.gameObject.SetActive(false);
         activeParts.Remove(part);
         partsAvailable.Add(part);
@@ -123,7 +121,7 @@ public class LandscapeManager : MonoBehaviour
         {
             return;
         }
-
+        GameStates.Instance.SyncCarriageSpeedPercentage(vagonSpeedCurrent / vagonSpeed);
         for (int i = 0; i < activeParts.Count; i++)
         {
             var part = activeParts[i];
