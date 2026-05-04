@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Warp_Pulling the lever
   m_EditorClassIdentifier: 
   animation: {fileID: -5989579420725052391, guid: 707ea170f6201e5418ba7fce7f140619, type: 3}
-  animatorStateName: 
-  blendTime: 0.25
+  animatorStateName: LeverPull2
+  blendTime: 0.1
   rootX:
     serializedVersion: 2
     m_Curve:

@@ -32,10 +32,18 @@ public class Barnacle : MonoBehaviour
     {
         if (obj.CompareTag(tagToAttack))
         {
-            if (obj.TryGetComponent<IBarnacleAttackable>(out victimCurrent))
+            if (obj.TryGetComponent(out victimCurrent))
             {
                 StartCoroutine(movingToAttack());
             }
+            else
+            {
+                Debug.LogError("Object " + obj.name + " has tag " + obj.tag + " but does not implement IBarnacleAttackable", this);
+            }
+        }
+        else
+        {
+            Debug.LogError("Object " + obj.name + " does not have the correct tag to be attacked by barnacle. Expected: " + tagToAttack + ", actual: " + obj.tag, this);
         }
     }
     IEnumerator movingToAttack()

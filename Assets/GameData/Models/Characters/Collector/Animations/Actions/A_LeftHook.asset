@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3089b6e332984dd5aa57d7a1400694c7, type: 3}
-  m_Name: CAS_Collector@Breathing Idle
+  m_Script: {fileID: 11500000, guid: a15b65962d404b18a8fbde00c6981655, type: 3}
+  m_Name: A_LeftHook
   m_EditorClassIdentifier: 
+  clip: {fileID: -203655887218126122, guid: 79e518a891aca934586eaaaa1b34808f, type: 3}
+  mask: {fileID: 0}
   blendTime:
     easeMode:
       easeFunc: 0
@@ -39,9 +41,9 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    blendInTime: 0.25
-    blendOutTime: 0.25
-  basePose: {fileID: -5989579420725052391, guid: 97d50f4e505238f4aa5d8e484ca9ddcd, type: 3}
-  overlayPose: {fileID: -5989579420725052391, guid: 75fbd53b8aac40942b1b50bb859085c4, type: 3}
-  overlayAnimator: {fileID: 0}
-  proceduralSettings: {fileID: 11400000, guid: ccec98ab5e49b49269171b2247bb7c17, type: 2}
+    blendInTime: 0.2
+    blendOutTime: 0.2
+  playRate: 1
+  isAdditive: 0
+  autoBlendOut: 1
+  slot: 1
