@@ -1,8 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Carriage : MonoBehaviour
 {
+    [SerializeField]
+    float leavingDelay = 5;
+    [SerializeField]
+    AudioMixer audioMixer;
     [SerializeField]
     Trigger doorClosingTrigger;
     [SerializeField]
@@ -41,6 +46,14 @@ public class Carriage : MonoBehaviour
         {
             doorClosingTrigger.gameObject.SetActive(false);
         }
+        StartCoroutine(startLeaving());
+    }
+
+    IEnumerator startLeaving()
+    {
+        yield return new WaitForSeconds(leavingDelay);
+        audioSourceBackground.Play();
+        GameEvents.Instance.RaiseCarriageStartsLeaving();
     }
 
     private void Instance_MainDoorOpened()
@@ -59,14 +72,14 @@ public class Carriage : MonoBehaviour
     private void Instance_CarriageStopped()
     {
         doorsChangeState(true);
-        audioSourceEffects.clip = audioClipDoorsOpen;
-        audioSourceEffects.Play();
     }
 
     void doorsChangeState(bool open)
     {
         animationDoorsOpen.Animation.ChangeDirection(open);
         animationDoorsOpen.Play();
+        audioSourceEffects.clip = audioClipDoorsOpen;
+        audioSourceEffects.Play();
     }
 
     IEnumerator stopping()
@@ -75,5 +88,11 @@ public class Carriage : MonoBehaviour
         audioSourceEffects.Play();
         yield return new WaitForSeconds(0.3f);
         audioSourceBackground.Stop();
+    }
+    private void Update()
+    {
+        audioSourceBackground.pitch = GameStates.Instance.CarriageSpeedPercentage;
+        float pitchCorrection = 1f / audioSourceBackground.pitch;
+        audioMixer.SetFloat("PitchShift", pitchCorrection);
     }
 }

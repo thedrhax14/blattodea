@@ -16,12 +16,24 @@ public class GameStates
     }
     public bool StopLeverActivated { get; private set; } = false;
     public bool CarriageStopped { get; private set; } = false;
+    public bool CarriageLeaving { get; private set; } = false;
+
     public bool CarriageStartsStopping { get; private set; } = false;
     public bool MainDoorPanelLeverPulled { get; private set; } = false;
     public bool MainDoorStartsOpening { get; private set; } = false;
     public bool MainDoorOpened { get; private set; } = false;
+    public float CarriageSpeedPercentage { get; private set; } = 0;
+    public void SyncCarriageSpeedPercentage(float val)
+    {
+        CarriageSpeedPercentage = val;
+        CarriageSpeedPercentage = Mathf.Clamp(CarriageSpeedPercentage, 0.3f, 1);
+    }
     private GameStates()
     {
+        GameEvents.Instance.CarriageStartsLeaving += () =>
+        {
+            CarriageLeaving = true;
+        };
         GameEvents.Instance.StopLeverActivated += () =>
         {
             StopLeverActivated = true;
