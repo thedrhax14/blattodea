@@ -487,6 +487,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2902131247643010291, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 96a10c4149dbede448ddf677826a6505, type: 2}
     - target: {fileID: 3843174268142481562, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -662,6 +666,10 @@ PrefabInstance:
     - target: {fileID: 8789830911436138150, guid: 89476dbb8534c7a4d82aa89351e7e4b3, type: 3}
       propertyPath: tonnelPartSize
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789830911436138150, guid: 89476dbb8534c7a4d82aa89351e7e4b3, type: 3}
+      propertyPath: distanceForTargetStartStopping
+      value: 3.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

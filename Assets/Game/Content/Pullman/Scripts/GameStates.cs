@@ -24,6 +24,7 @@ public class GameStates
     public void SyncCarriageSpeedPercentage(float val)
     {
         CarriageSpeedPercentage = val;
+        CarriageSpeedPercentage = Mathf.Clamp(CarriageSpeedPercentage, 0.3f, 2);
     }
     private GameStates()
     {
