@@ -24,6 +24,7 @@ public class Carriage : MonoBehaviour
     {
         doorsChangeState(false);
         doorClosingTrigger.gameObject.SetActive(false);
+        GameEvents.Instance.RaiseCarriageStartsLeaving();
     }
 
     private void Instance_MainDoorOpened()

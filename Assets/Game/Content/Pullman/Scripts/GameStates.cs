@@ -16,10 +16,16 @@ public class GameStates
     }
     public bool StopLeverActivated { get; private set; } = false;
     public bool CarriageStopped { get; private set; } = false;
+    public bool CarriageLeaving { get; private set; } = false;
+
     public bool CarriageStartsStopping { get; private set; } = false;
     public bool MainDoorOpened { get; private set; } = false;
     private GameStates()
     {
+        GameEvents.Instance.CarriageStartsLeaving += () =>
+        {
+            CarriageLeaving = true;
+        };
         GameEvents.Instance.StopLeverActivated += () =>
         {
             StopLeverActivated = true;
