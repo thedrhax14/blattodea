@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 public class Carriage : MonoBehaviour
 {
     [SerializeField]
+    float leavingDelay = 5;
+    [SerializeField]
     AudioMixer audioMixer;
     [SerializeField]
     Trigger doorClosingTrigger;
@@ -32,7 +34,7 @@ public class Carriage : MonoBehaviour
 
     IEnumerator startLeaving()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(leavingDelay);
         audioSourceBackground.Play();
         GameEvents.Instance.RaiseCarriageStartsLeaving();
     }
