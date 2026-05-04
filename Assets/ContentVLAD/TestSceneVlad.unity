@@ -488,9 +488,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2902131247643010291, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902131247643010291, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: 96a10c4149dbede448ddf677826a6505, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3843174268142481562, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

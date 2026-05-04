@@ -121,7 +121,7 @@ public class LandscapeManager : MonoBehaviour
         {
             return;
         }
-        GameStates.Instance.SyncCarriageSpeedPercentage(vagonSpeedCurrent / vagonSpeed);
+        GameStates.Instance.SyncCarriageSpeedPercentage(vagonSpeedCurrent / vagonSpeed + 0.5f);
         for (int i = 0; i < activeParts.Count; i++)
         {
             var part = activeParts[i];
