@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 928e2ecfbd1ec0f469e1838b49a4dda9, type: 3}
-  m_Name: Warp_Throw
+  m_Name: Warp_Benchpress
   m_EditorClassIdentifier: 
-  animation: {fileID: -203655887218126122, guid: 8c5ad68d2297c450bb202cc2e5bb7772, type: 3}
-  animatorStateName: Throw
-  blendTime: 0.25
+  animation: {fileID: -5989579420725052391, guid: 75fbd53b8aac40942b1b50bb859085c4, type: 3}
+  animatorStateName: 
+  blendTime: 0.01
   rootX:
     serializedVersion: 2
     m_Curve:
@@ -106,7 +106,14 @@ MonoBehaviour:
   - tOffset: {x: 0, y: 0, z: 0}
     rOffset: {x: 0, y: 0, z: 0}
     startTime: 0
-    endTime: 0.2
+    endTime: 0.6
+    minRate: 1
+    maxRate: 2
+    totalRootMotion: {x: 0, y: 0, z: 0}
+  - tOffset: {x: 0, y: 0, z: 0}
+    rOffset: {x: 0, y: 0, z: 0}
+    startTime: 14
+    endTime: 14.5
     minRate: 1
     maxRate: 2
     totalRootMotion: {x: 0, y: 0, z: 0}

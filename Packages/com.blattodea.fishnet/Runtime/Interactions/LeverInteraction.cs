@@ -9,7 +9,7 @@ namespace Blattodea.FishNet.Interactions
     public class LeverInteraction : NetworkBehaviour, ICharacterInteraction
     {
         public Transform ikHandTarget;
-        public Transform playerTarget;
+        public Transform playerTarget, respawnPoint;
         [Range(0, 180f)] public float maxAllowedAngle = 40f;
         public MotionWarpingAsset warpingAsset;
 
@@ -74,10 +74,19 @@ namespace Blattodea.FishNet.Interactions
             MotionWarpingComponent warpingComponent = player.GetComponent<MotionWarpingComponent>();
             if (warpingComponent != null)
             {
-                warpingComponent.Play(warpingAsset, new[]
+                WarpPoint[] warpPoints = new[]
                 {
                     new WarpPoint(playerTarget)
-                });
+                };
+                if(respawnPoint != null)
+                {
+                    warpPoints = new[]
+                    {
+                        new WarpPoint(playerTarget),
+                        new WarpPoint(respawnPoint)
+                    };
+                }
+                warpingComponent.Play(warpingAsset, warpPoints);
             }
 
             if (_animator != null)
