@@ -5,6 +5,8 @@ public class StationDoorPanelLever : MonoBehaviour, IInteractable
 {
 
     [SerializeField]
+    Vector3 forceForFallDown = new Vector3(-0.5f, 0, -1f);
+    [SerializeField]
     InteractObjectData interactObjectData;
     Action interactAction = delegate { };
     new Rigidbody rigidbody;
@@ -50,7 +52,7 @@ public class StationDoorPanelLever : MonoBehaviour, IInteractable
     {
         interactAction();
         rigidbody.isKinematic = false;
-        rigidbody.AddRelativeForce(new Vector3(0.5f, 0, -2), ForceMode.Impulse);
+        rigidbody.AddRelativeForce(forceForFallDown, ForceMode.Impulse);
     }
 
     public void SetupInteraction(Action interactAction, bool append = false)

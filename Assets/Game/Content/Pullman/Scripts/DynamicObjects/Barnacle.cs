@@ -34,7 +34,8 @@ public class Barnacle : MonoBehaviour
         {
             if (obj.TryGetComponent<IBarnacleAttackable>(out victimCurrent))
             {
-                StartCoroutine(movingToAttack());
+                //StartCoroutine(movingToAttack());
+                animationAttack.Play();
             }
         }
     }
@@ -43,9 +44,9 @@ public class Barnacle : MonoBehaviour
         while (true)
         {
             tongue.position = Vector3.MoveTowards(tongue.position, victimCurrent.CapturePointPosition, speedAttack);
-            if (tongue.position== victimCurrent.CapturePointPosition)
+            if (tongue.position == victimCurrent.CapturePointPosition)
             {
-                onContact();
+                captureVictim();
                 yield return new WaitForSeconds(0.05f);
                 StartCoroutine(movingToHide());
                 yield break;
@@ -65,14 +66,13 @@ public class Barnacle : MonoBehaviour
             yield return null;
         }
     }
-    void onContact()
-    {
-        audioSource.Play();
-        //animationAttack.Play();
-        captureVictim();
-    }
     void captureVictim()
     {
+        //animationAttack.Play();
         victimCurrent.Capture(tongue);
+    }
+    void PlaySFX()
+    {
+        audioSource.Play();
     }
 }

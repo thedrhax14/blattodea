@@ -18,11 +18,11 @@ public class StationDoor : MonoBehaviour
     Animator animator;
     [SerializeField]
     AudioClip audioClipValve, audioClipDoorOpen, audioClipSmashed;
-    AudioSource audioSource;
+    [SerializeField]
+    AudioSource audioSourceMain, audioSourceSmashTrigger;
 
     private void Awake()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
         doorActivator.SetupInteraction(() =>
         {
             if (PullmanSequenceNetwork.TryGetInstance(out PullmanSequenceNetwork sequenceNetwork))
@@ -79,8 +79,8 @@ public class StationDoor : MonoBehaviour
     void startRotateValve()
     {
         particlesMetalImpactValve.Play();
-        audioSource.clip = audioClipValve;
-        audioSource.Play();
+        audioSourceMain.clip = audioClipValve;
+        audioSourceMain.Play();
         animator.SetTrigger("Activate");
     }
 
@@ -101,14 +101,14 @@ public class StationDoor : MonoBehaviour
         {
             particle.Play();
         }
-        audioSource.clip = audioClipDoorOpen;
-        audioSource.Play();
+        audioSourceMain.clip = audioClipDoorOpen;
+        audioSourceMain.Play();
     }
 
     private void PlaySmashEffects()
     {
-        audioSource.clip = audioClipSmashed;
-        audioSource.Play();
+        audioSourceSmashTrigger.clip = audioClipSmashed;
+        audioSourceSmashTrigger.Play();
         particlesSmashEffect.Play();
     }
 

@@ -18,6 +18,7 @@ public class SimpleAnimation : MonoBehaviour
             clip.legacy = true;
             clip.wrapMode = wrapMode;
             animation.clip = clip;
+            animation.playAutomatically = playAutomatically;
             if (playAutomatically)
             {
                 animation.Play();
