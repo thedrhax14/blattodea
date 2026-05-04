@@ -34,13 +34,17 @@ public class Barnacle : MonoBehaviour
         {
             if (obj.TryGetComponent<IBarnacleAttackable>(out victimCurrent))
             {
-                //StartCoroutine(movingToAttack());
-                animationAttack.Play();
+                StartCoroutine(movingToAttack());
             }
         }
     }
     IEnumerator movingToAttack()
     {
+        yield return new WaitForSeconds(2);
+        animationAttack.Play();
+        //for now
+        yield break;
+        //
         while (true)
         {
             tongue.position = Vector3.MoveTowards(tongue.position, victimCurrent.CapturePointPosition, speedAttack);
