@@ -98,7 +98,7 @@
                 },
                 {
                     "name": "UseItem",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "de2ec018-5936-4aa0-9746-eaea5e07c364",
                     "expectedControlType": "",
                     "processors": "",
@@ -158,6 +158,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Melee",
+                    "type": "Button",
+                    "id": "cb555beb-3d19-4c47-9196-334e6a3ad50a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -351,7 +360,7 @@
                 {
                     "name": "",
                     "id": "ebf6fd9f-0be6-4dd0-af80-93faa3aaa20c",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -444,6 +453,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "AlternativeAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9b0b2ff-3fc9-43d8-8559-c7391f94118e",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Melee",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

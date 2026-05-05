@@ -80,9 +80,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &1831801232681265905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,7 +908,7 @@ MonoBehaviour:
   _tickCallbacks: 6
   _useAnimation: {fileID: 11400000, guid: ae327c2d8d9ff429bb7e14aae6dd4514, type: 2}
   _characterAnimation: {fileID: 281709170515813295}
-  _useAction: {fileID: -9115622787020127606, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
+  _useAction: {fileID: -6614575022364108456, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
   _rayOrigin: {fileID: 8788140040326620743}
   _ignoredRoot: {fileID: 3903751993016776279}
   _rayDistance: 2
