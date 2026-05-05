@@ -54,7 +54,6 @@ public class InteractionManager : MonoBehaviour
     {
         if (Camera.main == null)
         {
-            Debug.Log("Waiting for camera...");
             return;
         }
 

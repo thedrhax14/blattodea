@@ -1,5 +1,7 @@
+using System.Collections;
 using FishNet.Managing;
 using FishNet.Transporting;
+using FishNet.Transporting.Tugboat;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -10,6 +12,7 @@ namespace FishNet.Example
     [DisallowMultipleComponent]
     public class RuntimeNetworkHud : MonoBehaviour
     {
+        private static WaitForSeconds _waitForSeconds1 = new WaitForSeconds(1f);
         [Header("References")]
         [SerializeField]
         private NetworkManager _networkManager;
@@ -43,6 +46,7 @@ namespace FishNet.Example
         private string _portText = "7770";
         private bool _isSubscribed;
         private bool _isVisible;
+        private bool _linuxServerStarted;
     #if ENABLE_INPUT_SYSTEM
         private bool _inputSubscribed;
         private bool _ownsEnabledToggleAction;
@@ -54,26 +58,28 @@ namespace FishNet.Example
         {
             _portText = _port.ToString();
             _isVisible = _startVisible;
-
-            if (IsLinuxServerEnvironment)
-                enabled = false;
         }
 
         private void OnEnable()
         {
-            if (IsLinuxServerEnvironment)
-                return;
-
-            TryInitialize();
             RefreshInputSubscription();
         }
 
         private void Start()
         {
+            Debug.Log($"RuntimeNetworkHud starting on {Application.platform}...");
             if (IsLinuxServerEnvironment)
+            {
+                Debug.Log("Running in Linux server environment.");
+                InitServer(false);
                 return;
-
+            }
+            Debug.Log("Subscribing to NetworkManager events...");
             TryInitialize();
+        }
+
+        public void InitServer(bool startedFromEditor = false) {
+            StartCoroutine(AutoStartLinuxServerIfNeeded(startedFromEditor));
         }
 
         private void OnDisable()
@@ -167,6 +173,37 @@ namespace FishNet.Example
             _clientState = _networkManager.ClientManager.Started ? LocalConnectionState.Started : LocalConnectionState.Stopped;
             _isSubscribed = true;
             return true;
+        }
+
+        private IEnumerator AutoStartLinuxServerIfNeeded(bool startedFromEditor = false)
+        {
+            yield return _waitForSeconds1;
+            Debug.Log($"{Time.time} Checking Linux server auto-start conditions...");
+            yield return _waitForSeconds1;
+            if (!startedFromEditor && (!IsLinuxServerEnvironment || _linuxServerStarted)) {
+                Debug.Log($"{Time.time} Linux server auto-start conditions not met, skipping auto-start.");
+                yield break;
+            }
+
+            if (!TryInitialize()) {
+                Debug.LogError($"{Time.time} NetworkManager not found, cannot auto-start Linux server.");
+                yield break;
+            }
+
+            if (_networkManager.ServerManager.Started)
+            {
+                _linuxServerStarted = true;
+                Debug.Log($"{Time.time} Linux server is already running.");
+                yield break;
+            }
+            yield return _waitForSeconds1; // Wait a moment to ensure NetworkManager is fully initialized.
+            Debug.Log($"{Time.time} Auto-starting Linux server...");
+            yield return _waitForSeconds1;
+            _networkManager.ServerManager.StartConnection();
+            yield return _waitForSeconds1;
+            _linuxServerStarted = _networkManager.ServerManager.Started;
+            Debug.Log($"{Time.time} Linux server auto-start on port {_networkManager.ServerManager.GetComponent<Tugboat>().GetPort()} have {( _linuxServerStarted ? "succeeded" : "failed")}.");
+            yield break;
         }
 
         private void Unsubscribe()

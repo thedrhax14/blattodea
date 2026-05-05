@@ -1634,6 +1634,186 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2125001511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1734311115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3897008373962174491, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_Name
+      value: PunchingBag
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16752994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9658
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6826345065784887466, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996309282166757018, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.175
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3897008373962174491, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1734311118}
+    - targetCorrespondingSourceObject: {fileID: 3916454240751781371, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1734311119}
+  m_SourcePrefab: {fileID: 100100000, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+--- !u!1 &1734311116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3897008373962174491, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+  m_PrefabInstance: {fileID: 1734311115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1734311117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3916454240751781371, guid: 3ccdcfb8b3f1a0c4f8a32a5bb2f0fe7d, type: 3}
+  m_PrefabInstance: {fileID: 1734311115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1734311118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734311116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsNested>k__BackingField: 0
+  WasActiveDuringEdit: 1
+  WasActiveDuringEdit_Set1: 1
+  <ComponentIndex>k__BackingField: 0
+  <PredictedSpawn>k__BackingField: {fileID: 0}
+  <PredictedOwner>k__BackingField: {fileID: 0}
+  NetworkBehaviours: []
+  InitializedParentNetworkBehaviour: {fileID: 0}
+  InitializedNestedNetworkObjects: []
+  RuntimeParentNetworkBehaviour: {fileID: 0}
+  RuntimeChildNetworkBehaviours: []
+  _isNetworked: 1
+  _isSpawnable: 1
+  _isGlobal: 0
+  _initializeOrder: 0
+  _preventDespawnOnDisconnect: 0
+  _defaultDespawnType: 0
+  _initializedTimestamp: 0
+  _localLevelOfDetailCalculationType: 0
+  _useLevelOfDetail: 0
+  _useRootLevelOfDetail: 1
+  NetworkObserver: {fileID: 0}
+  _enablePrediction: 0
+  _predictionType: 0
+  _localReconcileCorrectionType: 2
+  _graphicalObject: {fileID: 0}
+  _detachGraphicalObject: 0
+  _enableStateForwarding: 1
+  _networkTransform: {fileID: 0}
+  _ownerInterpolation: 1
+  _ownerSmoothedProperties: 255
+  _adaptiveInterpolation: 3
+  _spectatorSmoothedProperties: 255
+  _spectatorInterpolation: 2
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  <PrefabId>k__BackingField: 65535
+  <SpawnableCollectionId>k__BackingField: 0
+  <AssetPathHash>k__BackingField: 0
+  SceneId: 2918964602
+  SerializedTransformProperties:
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+    Scale: {x: 0, y: 0, z: 0}
+    IsValid: 0
+--- !u!114 &1734311119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734311117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 1734311118}
+  _networkObjectCache: {fileID: 0}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 1
+    Rotation: 1
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 0
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 0
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1 &2019066096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +2043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1301402237432782237, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2133197051766231782, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2174,7 +2358,7 @@ MonoBehaviour:
   _changeFrameRate: 1
   _frameRate: 50
   _shareIds: 1
-  _startOnHeadless: 1
+  _startOnHeadless: 0
 --- !u!114 &7443408886417461006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,11 +2374,11 @@ MonoBehaviour:
   _stopSocketsOnThread: 0
   _dontRoute: 0
   _reuseAddress: 0
-  _ipv4BindAddress: 
-  _enableIpv6: 1
+  _ipv4BindAddress: 0.0.0.0
+  _enableIpv6: 0
   _ipv6BindAddress: 
-  _port: 7770
-  _maximumClients: 4095
+  _port: 7777
+  _maximumClients: 13
   _clientAddress: localhost
 --- !u!114 &7443408886417461007
 MonoBehaviour:
@@ -2230,7 +2414,7 @@ MonoBehaviour:
   _remoteServerTimeout: 2
   _remoteServerTimeoutDuration: 60
   _changeFrameRate: 1
-  _frameRate: 500
+  _frameRate: 120
 --- !u!114 &7443408886417461009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,7 +2429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _networkManager: {fileID: 7443408886417460994}
   _address: 127.0.0.1
-  _port: 7770
+  _port: 7777
   _startVisible: 1
   _toggleHudAction: {fileID: -8946339670680512801, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
   _hudArea:
@@ -2410,3 +2594,4 @@ SceneRoots:
   - {fileID: 2125001511}
   - {fileID: 37708340}
   - {fileID: 1210267063}
+  - {fileID: 1734311115}

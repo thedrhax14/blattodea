@@ -186,7 +186,8 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
     [ObserversRpc]
     private void ObserversScheduleUseAnimationRpc(uint startTick)
     {
-        Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} received animation schedule RPC for tick {startTick}. LocalTick={TimeManager.LocalTick}", this);
+        uint estimatedServerTick = GetEstimatedServerTick();
+        Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} received animation schedule RPC for server tick {startTick}. LocalTick={TimeManager.LocalTick}, EstimatedServerTick={estimatedServerTick}", this);
         ScheduleOrPlayAnimation(startTick);
     }
 
@@ -217,15 +218,59 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
 
     private void ScheduleOrPlayAnimation(uint startTick)
     {
-        if (TimeManager == null || TimeManager.LocalTick >= startTick)
+        if (TimeManager == null)
         {
             Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} is playing the animation immediately for scheduled tick {startTick}. LocalTick={(TimeManager == null ? UnsetTick : TimeManager.LocalTick)}", this);
             PlayUseAnimation(GetAnimationStartOffset(startTick));
             return;
         }
 
-        _scheduledAnimationTick = startTick;
-        Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} queued animation playback for tick {startTick}. CurrentLocalTick={TimeManager.LocalTick}", this);
+        uint localStartTick = startTick;
+        if (!IsServerStarted)
+        {
+            uint estimatedServerTick = GetEstimatedServerTick();
+            if (estimatedServerTick >= startTick)
+            {
+                float catchUpOffset = (estimatedServerTick - startTick) * (float)TimeManager.TickDelta;
+                Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} is playing the animation immediately for past server tick {startTick}. LocalTick={TimeManager.LocalTick}, EstimatedServerTick={estimatedServerTick}, CatchUpOffset={catchUpOffset}", this);
+                PlayUseAnimation(catchUpOffset);
+                return;
+            }
+
+            localStartTick = TimeManager.LocalTick + (startTick - estimatedServerTick);
+            Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} mapped server tick {startTick} to local tick {localStartTick}. LocalTick={TimeManager.LocalTick}, EstimatedServerTick={estimatedServerTick}", this);
+        }
+
+        if (TimeManager.LocalTick >= localStartTick)
+        {
+            Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} is playing the animation immediately for mapped local tick {localStartTick}. LocalTick={TimeManager.LocalTick}", this);
+            PlayUseAnimation(GetAnimationStartOffset(localStartTick));
+            return;
+        }
+
+        _scheduledAnimationTick = localStartTick;
+        Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} queued animation playback for local tick {localStartTick}. CurrentLocalTick={TimeManager.LocalTick}", this);
+    }
+
+    private uint GetEstimatedServerTick()
+    {
+        if (TimeManager == null)
+        {
+            return UnsetTick;
+        }
+
+        if (IsServerStarted)
+        {
+            return TimeManager.LocalTick;
+        }
+
+        uint estimatedServerTick = TimeManager.LastPacketTick.Value();
+        if (estimatedServerTick == UnsetTick)
+        {
+            return TimeManager.Tick;
+        }
+
+        return estimatedServerTick;
     }
 
     [Server]
