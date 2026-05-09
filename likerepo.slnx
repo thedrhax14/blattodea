@@ -51,6 +51,7 @@
   <Project Path="RetroTVFX.Runtime.csproj" />
   <Project Path="CAS.Examples.Editor.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
+  <Project Path="com.blattodea.fishnet.csproj" />
   <Project Path="ScriptableWidget.Editor.csproj" />
   <Project Path="Unity.InputSystem.ForUI.csproj" />
   <Project Path="Unity.Collections.CodeGen.csproj" />
@@ -63,7 +64,6 @@
   <Project Path="Unity.SysrootPackage.Editor.csproj" />
   <Project Path="Unity.Toolchain.Macos-arm64-Linux-x86_64.csproj" />
   <Project Path="Unity.Animation.Rigging.DocCodeExamples.csproj" />
-  <Project Path="com.blattodea.fishnet.csproj" />
   <Project Path="com.blattodea.core.demo.csproj" />
   <Project Path="RetroTVFX.Editor.csproj" />
   <Project Path="com.blattodea.fishnet.editor.csproj" />
