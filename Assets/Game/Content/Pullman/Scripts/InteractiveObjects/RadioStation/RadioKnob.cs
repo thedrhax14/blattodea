@@ -1,37 +1,53 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class RadioKnob : MonoBehaviour, IInteractable
+public class RadioKnob : MonoBehaviour, IInteractable, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     [SerializeField]
-    InteractObjectData interactObjectData;
+    private InteractObjectData interactObjectData;
     private Action<float> onMouseDrag;
-    bool isDragged = false;
-    float sensitivity = 2;
-    float startMousePos = 0;
+    [SerializeField]
+    private bool isDragged = false;
+    [SerializeField]
+    private float sensitivity = 1f;
     bool IInteractable.CanShow => true;
     IInteractable.IObjectData IInteractable.ObjectData => interactObjectData;
+
     public void Init(Action<float> onMouseDrag)
     {
         this.onMouseDrag = onMouseDrag;
     }
-    void Update()
-    {
-        if (isDragged)
-        {
-            onMouseDrag((startMousePos - Input.mousePosition.x) / (Screen.width / 2) * -1 * sensitivity);
-            startMousePos = Input.mousePosition.x;
-        }
-    }
-    void IInteractable.Interact()
+
+    public void OnPointerDown(PointerEventData eventData)
     {
         isDragged = true;
-        startMousePos = Input.mousePosition.x;
     }
-    void IInteractable.Stop()
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        Debug.Log("Dragging");
+        if (!isDragged || onMouseDrag == null)
+        {
+            return;
+        }
+
+        Vector2 pointerDelta = eventData.delta;
+        onMouseDrag(pointerDelta.x * sensitivity);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
     {
         isDragged = false;
+    }
+
+    void IInteractable.Interact()
+    {
+        // isDragged = true;
+    }
+
+    void IInteractable.Stop()
+    {
+        // isDragged = false;
     }
 }

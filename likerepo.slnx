@@ -42,6 +42,7 @@
   <Project Path="Unity.Burst.Editor.csproj" />
   <Project Path="Unity.Sysroot.Linux_x86_64.csproj" />
   <Project Path="Unity.AI.Navigation.Updater.csproj" />
+  <Project Path="com.blattodea.fishnet.csproj" />
   <Project Path="PropertyBindings.Runtime.csproj" />
   <Project Path="KAnimationCore.Runtime.csproj" />
   <Project Path="FishNet.Demos.csproj" />
@@ -51,7 +52,6 @@
   <Project Path="RetroTVFX.Runtime.csproj" />
   <Project Path="CAS.Examples.Editor.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
-  <Project Path="com.blattodea.fishnet.csproj" />
   <Project Path="ScriptableWidget.Editor.csproj" />
   <Project Path="Unity.InputSystem.ForUI.csproj" />
   <Project Path="Unity.Collections.CodeGen.csproj" />

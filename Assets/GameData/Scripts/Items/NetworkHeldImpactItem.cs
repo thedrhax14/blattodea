@@ -36,6 +36,15 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
     [SerializeField]
     private InputActionReference _useAction;
 
+    [Header("Audio")]
+    [SerializeField]
+    private AudioSource _impactAudioSource;
+    [SerializeField]
+    private AudioClip _impactAudioClip;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float _impactAudioVolume = 1f;
+
     [Header("Raycast")]
     [SerializeField]
     private Transform _rayOrigin;
@@ -191,6 +200,12 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
         ScheduleOrPlayAnimation(startTick);
     }
 
+    [ObserversRpc]
+    private void ObserversPlayImpactAudioRpc()
+    {
+        PlayImpactAudio();
+    }
+
     [Server]
     private void HandleUseRequest(Vector3 origin, Vector3 direction)
     {
@@ -301,6 +316,8 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
     [Server]
     private void PerformImpact(Vector3 origin, Vector3 direction)
     {
+        ObserversPlayImpactAudioRpc();
+
         if (!TryGetHit(origin, direction, out RaycastHit hit))
         {
             DrawDebugRay(origin, direction, _rayDistance, MissDebugRayColor);
@@ -418,6 +435,19 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
         Debug.DrawRay(origin, normalizedDirection * distance, color, 1f);
     }
 
+    private void PlayImpactAudio()
+    {
+        ResolveReferences();
+
+        if (_impactAudioSource == null || _impactAudioClip == null)
+        {
+            return;
+        }
+
+        _impactAudioSource.pitch = 1f;
+        _impactAudioSource.PlayOneShot(_impactAudioClip, _impactAudioVolume);
+    }
+
     private void OnUseActionPerformed(InputAction.CallbackContext context)
     {
         Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} received input action '{context.action.name}' with phase {context.phase}.", this);
@@ -495,6 +525,11 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
         if (_ignoredRoot == null)
         {
             _ignoredRoot = transform.root;
+        }
+
+        if (_impactAudioSource == null)
+        {
+            _impactAudioSource = GetComponent<AudioSource>();
         }
     }
 
