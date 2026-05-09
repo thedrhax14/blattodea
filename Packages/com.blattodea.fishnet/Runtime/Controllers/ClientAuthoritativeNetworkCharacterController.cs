@@ -1167,6 +1167,7 @@ namespace Blattodea.FishNet.Controllers
 #if UNITY_INPUT_SYSTEM_ENABLED
         protected virtual void RefreshInputSubscriptions()
         {
+            characterCamera.gameObject.SetActive(IsOwner);
             if (!IsClientInitialized || !isActiveAndEnabled || !IsOwner)
             {
                 DisableInputSubscriptions();

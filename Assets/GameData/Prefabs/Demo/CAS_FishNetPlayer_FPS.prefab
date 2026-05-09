@@ -565,7 +565,7 @@ MonoBehaviour:
   _networkObjectCache: {fileID: 24483526804561316}
   remoteInterpolationSpeed: 12
   sendInterval: 0.05
-  lookSensitivity: 70
+  lookSensitivity: 35
   moveInputAction: {fileID: 1298322494240009924, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
   lookInputAction: {fileID: -8099637563336446640, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}
   sprintInputAction: {fileID: 3766794078187683627, guid: cdca9df7c8e47f548a7edc0e3ff944c8, type: 3}

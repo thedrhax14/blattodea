@@ -71,14 +71,14 @@ Material:
     m_Floats:
     - _AffineMapIntensity: 0
     - _BumpScale: 1
-    - _Cutoff: 0.5
+    - _Cutoff: 0.543
     - _DetailNormalMapScale: 1
     - _DrawDist: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Metallic: 1
+    - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
