@@ -1229,17 +1229,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_MoveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_MoveAction: {fileID: -1680190386980627800, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: 18593e14db09144faa4aad38978dfb73, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -2605,19 +2605,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: m_Volume
-      value: 0.075
-      objectReference: {fileID: 0}
-    - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
-      propertyPath: MaxDistance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
-      propertyPath: MinDistance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
+      propertyPath: MaxDistance
+      value: 9.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
+      propertyPath: MinDistance
+      value: 5.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: rolloffMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 65234949391752589, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -2813,15 +2813,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994626365810050772, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: m_Volume
-      value: 0.075
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4994626365810050772, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: MaxDistance
-      value: 30
+      value: 9.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994626365810050772, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
+      propertyPath: MinDistance
+      value: 5.91
       objectReference: {fileID: 0}
     - target: {fileID: 4994626365810050772, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: rolloffMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4994626365810050772, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
@@ -2877,7 +2881,7 @@ PrefabInstance:
       objectReference: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     - target: {fileID: 7706894916755519760, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: sensitivity
-      value: 0.01
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 7706894916755519760, guid: aac72b93e3f5e704b8c97b6513003943, type: 3}
       propertyPath: dragInputAction

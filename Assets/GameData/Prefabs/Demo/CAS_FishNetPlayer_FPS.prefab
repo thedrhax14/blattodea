@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 2485899964216671351}
   - component: {fileID: 6006965869589308256}
   - component: {fileID: 3986535567105702829}
+  - component: {fileID: 1453082600795097460}
   m_Layer: 2
   m_Name: CAS_FishNetPlayer_FPS
   m_TagString: Player
@@ -968,6 +969,29 @@ MonoBehaviour:
   maxStepInterval: 0.25
   volumeRange: {x: 0.9, y: 1}
   pitchRange: {x: 0.95, y: 1.05}
+--- !u!164 &1453082600795097460
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035598242180886075}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -1000
+  m_DecayTime: 2.81
+  m_DecayHFRatio: 0.14
+  m_ReflectionsLevel: 429
+  m_ReverbLevel: 1023
+  m_ReverbDelay: 0.021
+  m_Diffusion: 80
+  m_Density: 60
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 22
 --- !u!1 &5411675934307661313
 GameObject:
   m_ObjectHideFlags: 0

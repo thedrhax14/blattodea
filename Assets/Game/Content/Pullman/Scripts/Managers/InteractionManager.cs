@@ -74,11 +74,6 @@ public class InteractionManager : MonoBehaviour
         {
             interactInputAction.action.started -= OnInteractStarted;
             interactInputAction.action.canceled -= OnInteractCanceled;
-
-            if (ownsInteractAction)
-            {
-                interactInputAction.action.Disable();
-            }
         }
 
         ReleaseActiveInteractable();
@@ -140,7 +135,6 @@ public class InteractionManager : MonoBehaviour
         activeInteractable = hoveredInteractable;
         activeInteractable.Interact();
         CameraIsLocked = activeInteractable.ObjectData.LockCamera;
-        Cursor.lockState = CameraIsLocked ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
 
     private void OnInteractCanceled(InputAction.CallbackContext context)
@@ -155,8 +149,5 @@ public class InteractionManager : MonoBehaviour
             activeInteractable.Stop();
             activeInteractable = null;
         }
-
-        CameraIsLocked = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }

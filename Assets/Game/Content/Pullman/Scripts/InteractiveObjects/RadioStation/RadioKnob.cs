@@ -25,7 +25,6 @@ public class RadioKnob : MonoBehaviour, IInteractable
 
     private void OnDisable()
     {
-        DisableActionIfOwned(dragInputAction, _ownsDragAction);
         _ownsDragAction = false;
         isDragged = false;
     }
@@ -80,15 +79,5 @@ public class RadioKnob : MonoBehaviour, IInteractable
 
         actionReference.action.Enable();
         return true;
-    }
-
-    private static void DisableActionIfOwned(InputActionReference actionReference, bool owned)
-    {
-        if (!owned || actionReference == null || actionReference.action == null)
-        {
-            return;
-        }
-
-        actionReference.action.Disable();
     }
 }
