@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public interface IInteractable
@@ -37,10 +38,14 @@ public class InteractionManager : MonoBehaviour
     Image interactIcon;
     [SerializeField]
     Text interactText;
+    [SerializeField] private InputActionReference interactInputAction;
     [SerializeField] private float interactDistance = 3f;
     [SerializeField] private LayerMask interactLayer;
     Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0);
     bool updateCursor = true;
+    bool ownsInteractAction;
+    IInteractable hoveredInteractable;
+    IInteractable activeInteractable;
 
     public bool CameraIsLocked { get; private set; } = false;
 
@@ -48,6 +53,37 @@ public class InteractionManager : MonoBehaviour
     {
         interactIcon.gameObject.SetActive(value: false);
         interactText.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        if (interactInputAction == null || interactInputAction.action == null)
+        {
+            return;
+        }
+
+        ownsInteractAction = !interactInputAction.action.enabled;
+        interactInputAction.action.Enable();
+        interactInputAction.action.started += OnInteractStarted;
+        interactInputAction.action.canceled += OnInteractCanceled;
+    }
+
+    private void OnDisable()
+    {
+        if (interactInputAction != null && interactInputAction.action != null)
+        {
+            interactInputAction.action.started -= OnInteractStarted;
+            interactInputAction.action.canceled -= OnInteractCanceled;
+
+            if (ownsInteractAction)
+            {
+                interactInputAction.action.Disable();
+            }
+        }
+
+        ReleaseActiveInteractable();
+        hoveredInteractable = null;
+        ownsInteractAction = false;
     }
 
     private void Update()
@@ -76,20 +112,9 @@ public class InteractionManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance, interactLayer) && hit.collider.TryGetComponent(out interactable))
         {
             foundedInteractObject = true;
-            if (Input.GetKeyDown(interactable.ObjectData.InteractKey))
-            {
-                interactable.Interact();
-                CameraIsLocked = interactable.ObjectData.LockCamera;
-                Cursor.lockState = CameraIsLocked ? CursorLockMode.Confined : CursorLockMode.Locked;
-            }
-
-            if (Input.GetKeyUp(interactable.ObjectData.InteractKey))
-            {
-                interactable.Stop();
-                CameraIsLocked = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
         }
+
+        hoveredInteractable = foundedInteractObject ? interactable : null;
 
         if (foundedInteractObject && interactable.CanShow)
         {
@@ -103,5 +128,35 @@ public class InteractionManager : MonoBehaviour
             interactIcon.gameObject.SetActive(value: false);
             interactText.gameObject.SetActive(false);
         }
+    }
+
+    private void OnInteractStarted(InputAction.CallbackContext context)
+    {
+        if (hoveredInteractable == null)
+        {
+            return;
+        }
+
+        activeInteractable = hoveredInteractable;
+        activeInteractable.Interact();
+        CameraIsLocked = activeInteractable.ObjectData.LockCamera;
+        Cursor.lockState = CameraIsLocked ? CursorLockMode.Confined : CursorLockMode.Locked;
+    }
+
+    private void OnInteractCanceled(InputAction.CallbackContext context)
+    {
+        ReleaseActiveInteractable();
+    }
+
+    private void ReleaseActiveInteractable()
+    {
+        if (activeInteractable != null)
+        {
+            activeInteractable.Stop();
+            activeInteractable = null;
+        }
+
+        CameraIsLocked = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

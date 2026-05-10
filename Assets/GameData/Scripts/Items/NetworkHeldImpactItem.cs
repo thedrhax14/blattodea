@@ -99,6 +99,7 @@ public sealed class NetworkHeldImpactItem : TickNetworkBehaviour
     private void OnDisable()
     {
         UnsubscribeFromInput();
+        Debug.Log($"{nameof(NetworkHeldImpactItem)} on {name} was disabled. Unsubscribed from input and cleared scheduled actions.", this);
     }
 
     public override void OnStartClient()
